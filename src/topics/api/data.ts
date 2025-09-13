@@ -489,7 +489,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Rapid Exchange Standard Technology'
     ],
     correctAnswer: 1,
-    explanation: 'REST stands for Representational State Transfer, an architectural style for designing web services using standard HTTP methods and principles.'
+    
   },
   {
     id: 2,
@@ -497,7 +497,7 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which HTTP method is typically used to retrieve data?',
     options: ['POST', 'GET', 'PUT', 'DELETE'],
     correctAnswer: 1,
-    explanation: 'GET is the HTTP method used to retrieve data from a server. It should be safe and idempotent.'
+    
   },
   {
     id: 3,
@@ -505,7 +505,7 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'What HTTP status code indicates successful creation of a resource?',
     options: ['200 OK', '201 Created', '202 Accepted', '204 No Content'],
     correctAnswer: 1,
-    explanation: '201 Created indicates that the request was successful and a new resource has been created.'
+    
   },
   {
     id: 4,
@@ -513,7 +513,7 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which HTTP method is used to delete a resource?',
     options: ['REMOVE', 'DELETE', 'DESTROY', 'DROP'],
     correctAnswer: 1,
-    explanation: 'DELETE is the standard HTTP method for removing resources in REST APIs.'
+    
   },
   {
     id: 5,
@@ -521,7 +521,7 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'What does HTTP status code 404 indicate?',
     options: ['Server error', 'Unauthorized access', 'Resource not found', 'Bad request'],
     correctAnswer: 2,
-    explanation: '404 Not Found indicates that the requested resource could not be found on the server.'
+    
   },
   {
     id: 6,
@@ -529,7 +529,7 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which data format is most commonly used in modern REST APIs?',
     options: ['XML', 'CSV', 'JSON', 'HTML'],
     correctAnswer: 2,
-    explanation: 'JSON (JavaScript Object Notation) is the most commonly used data format in modern REST APIs due to its simplicity and language independence.'
+    
   },
   {
     id: 7,
@@ -542,7 +542,7 @@ export const quizQuestions: QuizQuestion[] = [
       'PUT is deprecated, use PATCH instead'
     ],
     correctAnswer: 1,
-    explanation: 'PUT replaces the entire resource with provided data, while PATCH applies partial modifications to a resource.'
+    
   },
   {
     id: 8,
@@ -555,7 +555,6 @@ export const quizQuestions: QuizQuestion[] = [
       'The client cannot maintain state'
     ],
     correctAnswer: 1,
-    explanation: 'Stateless means each request must contain all information necessary to process it; the server doesn\'t store client context between requests.'
   },
   {
     id: 9,
@@ -563,7 +562,7 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'What HTTP status code indicates unauthorized access?',
     options: ['400 Bad Request', '401 Unauthorized', '403 Forbidden', '404 Not Found'],
     correctAnswer: 1,
-    explanation: '401 Unauthorized indicates that the request requires authentication credentials.'
+    
   },
   {
     id: 10,
@@ -576,7 +575,6 @@ export const quizQuestions: QuizQuestion[] = [
       'A body parameter'
     ],
     correctAnswer: 1,
-    explanation: 'Path parameters are variable parts of the URL path used to identify specific resources, like /users/{id}.'
   },
   {
     id: 11,
@@ -584,7 +582,7 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which HTTP method is idempotent?',
     options: ['POST', 'GET', 'Both POST and GET', 'Neither POST nor GET'],
     correctAnswer: 1,
-    explanation: 'GET is idempotent - multiple identical requests have the same effect. POST is not idempotent as it typically creates new resources.'
+    
   },
   {
     id: 12,
@@ -597,7 +595,6 @@ export const quizQuestions: QuizQuestion[] = [
       'The content language'
     ],
     correctAnswer: 1,
-    explanation: 'Content-Type header specifies the media type (format) of the request or response body, like application/json.'
   },
   {
     id: 13,
@@ -605,7 +602,7 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'What HTTP status code indicates a server error?',
     options: ['400 Bad Request', '404 Not Found', '500 Internal Server Error', '401 Unauthorized'],
     correctAnswer: 2,
-    explanation: '500 Internal Server Error indicates that the server encountered an unexpected condition that prevented it from fulfilling the request.'
+    
   },
   {
     id: 14,
@@ -613,7 +610,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Query parameters in a URL are separated by which character?',
     options: ['/', '&', '?', '#'],
     correctAnswer: 1,
-    explanation: 'Query parameters are separated by the & (ampersand) character, while the first parameter is preceded by ?.'
   },
   {
     id: 15,
@@ -626,7 +622,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Bad request syntax'
     ],
     correctAnswer: 2,
-    explanation: '403 Forbidden indicates that the server understood the request but refuses to authorize it due to insufficient permissions.'
+    
   },
   {
     id: 16,
@@ -634,7 +630,7 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which HTTP method is typically used to create new resources?',
     options: ['GET', 'POST', 'PUT', 'DELETE'],
     correctAnswer: 1,
-    explanation: 'POST is typically used to create new resources, though PUT can also be used when the client specifies the resource identifier.'
+    
   },
   {
     id: 17,
@@ -647,7 +643,7 @@ export const quizQuestions: QuizQuestion[] = [
       'A termination point for connections'
     ],
     correctAnswer: 1,
-    explanation: 'An API endpoint is a specific URL where an API can be accessed, representing a point of communication between client and server.'
+    
   },
   {
     id: 18,
@@ -655,7 +651,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'What does HTTP status code 204 indicate?',
     options: ['Created', 'No Content', 'Not Modified', 'Accepted'],
     correctAnswer: 1,
-    explanation: '204 No Content indicates that the request was successful but there\'s no content to return in the response body.'
   },
   {
     id: 19,
@@ -668,7 +663,7 @@ export const quizQuestions: QuizQuestion[] = [
       'A programming function'
     ],
     correctAnswer: 1,
-    explanation: 'In REST, a resource represents any information that can be named and addressed via a URI, such as users, products, or orders.'
+    
   },
   {
     id: 20,
@@ -681,7 +676,7 @@ export const quizQuestions: QuizQuestion[] = [
       'To confirm request acceptance'
     ],
     correctAnswer: 1,
-    explanation: 'The Accept header tells the server what media types the client can process and prefers for the response.'
+    
   },
   {
     id: 21,
@@ -689,7 +684,7 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which status codes are in the 2xx range?',
     options: ['Client errors', 'Server errors', 'Success responses', 'Redirection messages'],
     correctAnswer: 2,
-    explanation: '2xx status codes indicate successful responses, meaning the request was received, understood, and accepted.'
+    
   },
   {
     id: 22,
@@ -697,7 +692,7 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'What does HTTP status code 400 indicate?',
     options: ['Success', 'Bad Request - client error', 'Server error', 'Not found'],
     correctAnswer: 1,
-    explanation: '400 Bad Request indicates that the server cannot process the request due to client error, such as invalid syntax or malformed request.'
+    
   },
   {
     id: 23,
@@ -705,7 +700,7 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which HTTP method should be used to update an entire resource?',
     options: ['POST', 'PATCH', 'PUT', 'UPDATE'],
     correctAnswer: 2,
-    explanation: 'PUT should be used to update an entire resource, replacing it completely with the provided data.'
+    
   },
 
   // INTERMEDIATE QUIZ QUESTIONS (24 questions)
@@ -720,7 +715,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Versioning API endpoints'
     ],
     correctAnswer: 1,
-    explanation: 'An API key is used to authenticate API requests, identifying and authorizing the client making the request.'
+    
   },
   {
     id: 25,
@@ -733,7 +728,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Data compression'
     ],
     correctAnswer: 1,
-    explanation: 'OAuth 2.0 is an authorization framework that enables secure delegated access without sharing passwords, using access tokens.'
+    
   },
   {
     id: 26,
@@ -746,7 +741,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Content negotiation versioning'
     ],
     correctAnswer: 2,
-    explanation: 'URI versioning includes the version in the URL path, such as /v1/users or /v2/users.'
   },
   {
     id: 27,
@@ -759,7 +753,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Compressing API data'
     ],
     correctAnswer: 1,
-    explanation: 'Pagination divides large datasets into smaller, manageable chunks to improve performance and user experience.'
+    
   },
   {
     id: 28,
@@ -772,7 +766,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Centralized Origin Request Service'
     ],
     correctAnswer: 1,
-    explanation: 'CORS stands for Cross-Origin Resource Sharing, a mechanism that allows web pages to make requests to different domains.'
+    
   },
   {
     id: 29,
@@ -785,7 +779,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Controlling data transmission rates'
     ],
     correctAnswer: 1,
-    explanation: 'Rate limiting controls the number of requests a client can make within a specific time window to prevent abuse and ensure fair usage.'
+    
   },
   {
     id: 30,
@@ -798,7 +792,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Joint Web Technology token'
     ],
     correctAnswer: 1,
-    explanation: 'JWT (JSON Web Token) is a compact, URL-safe token format for securely transmitting information between parties.'
+    
   },
   {
     id: 31,
@@ -811,7 +805,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Only internal error codes'
     ],
     correctAnswer: 1,
-    explanation: 'A good error response should include HTTP status code, human-readable error message, detailed description, and often additional context like error codes.'
+    
   },
   {
     id: 32,
@@ -824,7 +818,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Internal team communication only'
     ],
     correctAnswer: 1,
-    explanation: 'API documentation provides comprehensive information about endpoints, parameters, authentication, request/response formats, and examples to help developers integrate with the API.'
   },
   {
     id: 33,
@@ -837,7 +830,7 @@ export const quizQuestions: QuizQuestion[] = [
       'A database for API documentation'
     ],
     correctAnswer: 1,
-    explanation: 'OpenAPI is a standard specification for describing REST APIs in a machine-readable format, enabling automatic documentation and code generation.'
+    
   },
   {
     id: 34,
@@ -850,7 +843,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Never, they are optional'
     ],
     correctAnswer: 2,
-    explanation: 'Browsers send CORS preflight requests for non-simple requests that include custom headers, certain content types, or methods other than GET/POST/HEAD.'
   },
   {
     id: 35,
@@ -863,7 +855,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Security negotiations'
     ],
     correctAnswer: 1,
-    explanation: 'Content negotiation allows clients and servers to agree on the best representation format using headers like Accept for response format preferences.'
+    
   },
   {
     id: 36,
@@ -876,7 +868,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Storing user credentials'
     ],
     correctAnswer: 1,
-    explanation: 'API caching stores frequently requested data at various levels to improve performance and reduce server load.'
+    
   },
   {
     id: 37,
@@ -884,7 +876,7 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which header helps with conditional requests for caching?',
     options: ['Cache-Control', 'ETag', 'Content-Type', 'Authorization'],
     correctAnswer: 1,
-    explanation: 'ETag header provides a resource version identifier that enables conditional requests with If-None-Match for efficient caching.'
+    
   },
   {
     id: 38,
@@ -897,7 +889,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Sync is faster than async'
     ],
     correctAnswer: 1,
-    explanation: 'Synchronous APIs wait for operations to complete before returning, while asynchronous APIs return immediately and provide results later through callbacks or polling.'
+    
   },
   {
     id: 39,
@@ -910,7 +902,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Database hooks for APIs'
     ],
     correctAnswer: 1,
-    explanation: 'Webhooks are HTTP callbacks that automatically notify external systems when specific events occur, enabling real-time integrations.'
+    
   },
   {
     id: 40,
@@ -923,7 +915,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Network traffic filtering'
     ],
     correctAnswer: 1,
-    explanation: 'API filtering allows clients to retrieve specific subsets of data by applying criteria through query parameters or other mechanisms.'
+    
   },
   {
     id: 41,
@@ -936,7 +928,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Limit-Status only'
     ],
     correctAnswer: 1,
-    explanation: 'Common rate limiting headers include X-RateLimit-Limit (total allowed), X-RateLimit-Remaining (remaining requests), and X-RateLimit-Reset (reset time).'
+    
   },
   {
     id: 42,
@@ -949,7 +941,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Surveillance of API users'
     ],
     correctAnswer: 1,
-    explanation: 'API monitoring continuously tracks API performance, availability, error rates, and usage metrics to ensure service quality and reliability.'
+    
   },
   {
     id: 43,
@@ -962,7 +954,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Testing API pricing models'
     ],
     correctAnswer: 1,
-    explanation: 'API testing verifies that APIs meet expectations for functionality, performance, reliability, and security through various testing approaches.'
+    
   },
   {
     id: 44,
@@ -975,7 +967,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Using random access patterns'
     ],
     correctAnswer: 1,
-    explanation: 'Cursor-based pagination uses opaque cursors (tokens) to navigate through result sets, providing stable pagination even when data changes.'
+    
   },
   {
     id: 45,
@@ -988,7 +980,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Reduced server costs'
     ],
     correctAnswer: 1,
-    explanation: 'API versioning enables backward compatibility while allowing new features to be introduced, letting different client versions coexist.'
+    
   },
   {
     id: 46,
@@ -1001,7 +993,6 @@ export const quizQuestions: QuizQuestion[] = [
       'OAuth authentication'
     ],
     correctAnswer: 1,
-    explanation: 'Basic authentication sends username and password encoded in Base64 in the Authorization header, though it\'s less secure than modern alternatives.'
   },
   {
     id: 47,
@@ -1014,7 +1005,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Managing API versions'
     ],
     correctAnswer: 1,
-    explanation: 'Cache-Control header provides directives that control how responses should be cached, including expiration times and cache policies.'
+    
   },
 
   // EXPERT QUIZ QUESTIONS (23 questions)
@@ -1029,7 +1020,7 @@ export const quizQuestions: QuizQuestion[] = [
       'API design guidelines'
     ],
     correctAnswer: 1,
-    explanation: 'The OWASP API Security Top 10 identifies the most critical security vulnerabilities in APIs, including broken authentication, excessive data exposure, and injection attacks.'
+    
   },
   {
     id: 49,
@@ -1042,7 +1033,6 @@ export const quizQuestions: QuizQuestion[] = [
       'A programming framework'
     ],
     correctAnswer: 1,
-    explanation: 'An API gateway is a management layer that provides centralized authentication, rate limiting, monitoring, and request/response transformation between clients and backend services.'
   },
   {
     id: 50,
@@ -1055,7 +1045,7 @@ export const quizQuestions: QuizQuestion[] = [
       'HTTP Authentication Token System'
     ],
     correctAnswer: 1,
-    explanation: 'HATEOAS (Hypermedia as the Engine of Application State) is a REST constraint where responses include hypermedia links that guide clients through available actions.'
+    
   },
   {
     id: 51,
@@ -1068,7 +1058,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Prioritizing API performance over features'
     ],
     correctAnswer: 1,
-    explanation: 'API-first development treats APIs as first-class citizens by designing API specifications before implementation, enabling parallel development and better consistency.'
+    
   },
   {
     id: 52,
@@ -1081,7 +1071,6 @@ export const quizQuestions: QuizQuestion[] = [
       'A data validation pattern'
     ],
     correctAnswer: 1,
-    explanation: 'Circuit breaker pattern monitors service health and temporarily blocks requests to failing services to prevent cascading failures, with states: closed, open, and half-open.'
   },
   {
     id: 53,
@@ -1094,7 +1083,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Testing service level agreements'
     ],
     correctAnswer: 1,
-    explanation: 'API contract testing verifies that API providers and consumers agree on interfaces, ensuring compatibility and preventing integration issues when APIs change.'
+    
   },
   {
     id: 54,
@@ -1107,7 +1096,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Geographic tracking of API calls'
     ],
     correctAnswer: 1,
-    explanation: 'Distributed API tracing tracks requests across multiple services to provide end-to-end visibility into request flows, performance bottlenecks, and failure points.'
+    
   },
   {
     id: 55,
@@ -1120,7 +1109,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Rate limiting is deprecated'
     ],
     correctAnswer: 1,
-    explanation: 'Rate limiting sets request quotas per time period and rejects excess requests, while throttling controls the rate of processing and delays excess requests.'
+    
   },
   {
     id: 56,
@@ -1133,7 +1122,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Upgrading API servers'
     ],
     correctAnswer: 1,
-    explanation: 'API schema evolution manages changes to API data structures over time while maintaining backward compatibility through strategies like additive changes and optional fields.'
+    
   },
   {
     id: 57,
@@ -1146,7 +1135,7 @@ export const quizQuestions: QuizQuestion[] = [
       'International API agreements'
     ],
     correctAnswer: 1,
-    explanation: 'API federation combines multiple APIs into a unified interface, allowing clients to access distributed services through a single endpoint with schema stitching and request routing.'
+    
   },
   {
     id: 58,
@@ -1159,7 +1148,7 @@ export const quizQuestions: QuizQuestion[] = [
       'API documentation quality'
     ],
     correctAnswer: 1,
-    explanation: 'API observability provides deep insights into API behavior through metrics (performance), logs (events), and traces (request flows) for monitoring and debugging.'
+    
   },
   {
     id: 59,
@@ -1172,7 +1161,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Ignoring compatibility concerns'
     ],
     correctAnswer: 1,
-    explanation: 'Backward compatibility strategies include making only additive changes, using optional parameters with defaults, providing deprecation periods, and maintaining parallel versions.'
+    
   },
   {
     id: 60,
@@ -1185,7 +1174,7 @@ export const quizQuestions: QuizQuestion[] = [
       'API legal compliance only'
     ],
     correctAnswer: 1,
-    explanation: 'API governance establishes policies, standards, and processes for API design, development, and management to ensure consistency, security, and quality across the organization.'
+    
   },
   {
     id: 61,
@@ -1198,7 +1187,7 @@ export const quizQuestions: QuizQuestion[] = [
       'A security color-coding system'
     ],
     correctAnswer: 1,
-    explanation: 'Blue-green deployment maintains two identical production environments, allowing instant switching between versions for zero-downtime updates and easy rollback.'
+    
   },
   {
     id: 62,
@@ -1211,7 +1200,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Copying API functionality'
     ],
     correctAnswer: 1,
-    explanation: 'API mocking creates fake implementations that simulate real API behavior for testing, development, and integration purposes without dependencies on actual services.'
+    
   },
   {
     id: 63,
@@ -1224,7 +1213,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Mining industry API standards'
     ],
     correctAnswer: 1,
-    explanation: 'Canary release gradually rolls out API changes to a small subset of users first to validate functionality and performance before full deployment.'
+    
   },
   {
     id: 64,
@@ -1237,7 +1226,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Managing API developer careers'
     ],
     correctAnswer: 1,
-    explanation: 'API lifecycle management covers the complete API journey: planning, design, development, testing, deployment, monitoring, versioning, evolution, and eventual retirement.'
   },
   {
     id: 65,
@@ -1250,7 +1238,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Live broadcasting APIs'
     ],
     correctAnswer: 1,
-    explanation: 'API streaming patterns handle continuous data flows using technologies like Server-Sent Events, WebSockets, and streaming APIs for real-time updates and large datasets.'
+    
   },
   {
     id: 66,
@@ -1263,7 +1251,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Academic research on APIs'
     ],
     correctAnswer: 1,
-    explanation: 'API analytics tracks usage patterns, performance metrics, error rates, user behavior, and business-specific metrics to optimize API performance and strategy.'
+    
   },
   {
     id: 67,
@@ -1276,7 +1264,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Maritime API security standards'
     ],
     correctAnswer: 1,
-    explanation: 'Bulkhead pattern isolates critical resources and components to prevent failures in one area from cascading to other parts of the system.'
+    
   },
   {
     id: 68,
@@ -1289,7 +1277,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Backing up API data'
     ],
     correctAnswer: 1,
-    explanation: 'API data transformation converts data between different formats, structures, or schemas for legacy integration, client requirements, or version compatibility.'
+    
   },
   {
     id: 69,
@@ -1302,7 +1290,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Market research for API features'
     ],
     correctAnswer: 1,
-    explanation: 'Consumer-driven contract testing lets API consumers define contracts specifying their expectations, which providers must satisfy, ensuring compatibility from the consumer perspective.'
+    
   },
   {
     id: 70,
@@ -1315,6 +1303,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Financial APIs only'
     ],
     correctAnswer: 1,
-    explanation: 'API monetization strategies include tiered pricing, freemium models, pay-per-call, subscriptions, and value-based pricing to generate revenue from API usage.'
+    
   }
 ];

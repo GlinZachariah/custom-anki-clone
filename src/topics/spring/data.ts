@@ -489,7 +489,6 @@ export const quizQuestions: QuizQuestion[] = [
       'To provide a database management system'
     ],
     correctAnswer: 1,
-    explanation: 'Spring Framework provides comprehensive infrastructure support for developing Java applications, focusing on dependency injection, AOP, and enterprise features.'
   },
   {
     id: 2,
@@ -497,7 +496,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which annotation is used to mark a class as a Spring-managed component?',
     options: ['@Bean', '@Component', '@Autowired', '@Configuration'],
     correctAnswer: 1,
-    explanation: '@Component is the generic stereotype annotation that marks a class as a Spring-managed component for automatic detection and instantiation.'
   },
   {
     id: 3,
@@ -505,7 +503,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'What type of injection is recommended by Spring for mandatory dependencies?',
     options: ['Field injection', 'Setter injection', 'Constructor injection', 'Method injection'],
     correctAnswer: 2,
-    explanation: 'Constructor injection is recommended for mandatory dependencies as it ensures immutability and guarantees dependencies are provided.'
   },
   {
     id: 4,
@@ -513,7 +510,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which interface is the root of Spring\'s IoC container?',
     options: ['ApplicationContext', 'BeanFactory', 'ConfigurableApplicationContext', 'WebApplicationContext'],
     correctAnswer: 1,
-    explanation: 'BeanFactory is the root interface for accessing Spring containers, providing basic functionality for managing beans.'
   },
   {
     id: 5,
@@ -521,7 +517,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'What is the default scope of Spring beans?',
     options: ['Prototype', 'Singleton', 'Request', 'Session'],
     correctAnswer: 1,
-    explanation: 'Singleton is the default scope, meaning one instance per Spring container.'
   },
   {
     id: 6,
@@ -529,7 +524,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which annotation enables automatic dependency injection?',
     options: ['@Component', '@Bean', '@Autowired', '@Service'],
     correctAnswer: 2,
-    explanation: '@Autowired enables automatic dependency injection by type, eliminating the need for manual wiring.'
   },
   {
     id: 7,
@@ -537,7 +531,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'What annotation is used with @Autowired when multiple beans of the same type exist?',
     options: ['@Primary', '@Qualifier', '@Component', '@Bean'],
     correctAnswer: 1,
-    explanation: '@Qualifier specifies which bean should be injected when multiple beans of the same type are present.'
   },
   {
     id: 8,
@@ -545,7 +538,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which annotation configures component scanning in Java configuration?',
     options: ['@Configuration', '@ComponentScan', '@EnableAutoConfiguration', '@SpringBootApplication'],
     correctAnswer: 1,
-    explanation: '@ComponentScan configures component scanning directives and specifies base packages to scan for annotated components.'
   },
   {
     id: 9,
@@ -553,7 +545,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'What annotation is used to inject property values?',
     options: ['@Autowired', '@Component', '@Value', '@Qualifier'],
     correctAnswer: 2,
-    explanation: '@Value injects literal values, properties from files, or SpEL expressions into fields and parameters.'
   },
   {
     id: 10,
@@ -561,7 +552,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which method is called after dependency injection is complete?',
     options: ['@PreDestroy', '@PostConstruct', 'afterPropertiesSet()', 'init()'],
     correctAnswer: 1,
-    explanation: '@PostConstruct marks methods to be executed after dependency injection is complete.'
   },
   {
     id: 11,
@@ -574,7 +564,6 @@ export const quizQuestions: QuizQuestion[] = [
       'It ignores one dependency'
     ],
     correctAnswer: 1,
-    explanation: 'Spring throws BeanCurrentlyInCreationException for circular dependencies with constructor injection as it cannot resolve them.'
   },
   {
     id: 12,
@@ -582,7 +571,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which annotation enables profile-based bean registration?',
     options: ['@Component', '@Profile', '@Conditional', '@Scope'],
     correctAnswer: 1,
-    explanation: '@Profile enables conditional bean registration based on active profiles.'
   },
   {
     id: 13,
@@ -595,7 +583,6 @@ export const quizQuestions: QuizQuestion[] = [
       '@Component is deprecated'
     ],
     correctAnswer: 1,
-    explanation: '@Configuration indicates a class that declares @Bean methods for explicit bean definitions, while @Component marks regular managed components.'
   },
   {
     id: 14,
@@ -603,7 +590,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which stereotype annotation is specifically for data access layer?',
     options: ['@Component', '@Service', '@Repository', '@Controller'],
     correctAnswer: 2,
-    explanation: '@Repository is specifically for data access layer and provides automatic exception translation.'
   },
   {
     id: 15,
@@ -616,7 +602,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Marks a bean as prototype scope'
     ],
     correctAnswer: 1,
-    explanation: '@Primary indicates preference when multiple beans of the same type are present, making it the default choice for injection.'
   },
   {
     id: 16,
@@ -624,7 +609,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which scope creates a new bean instance for each request?',
     options: ['Singleton', 'Prototype', 'Request', 'Session'],
     correctAnswer: 1,
-    explanation: 'Prototype scope creates a new bean instance each time it is requested from the container.'
   },
   {
     id: 17,
@@ -637,7 +621,6 @@ export const quizQuestions: QuizQuestion[] = [
       'ApplicationContext is deprecated'
     ],
     correctAnswer: 1,
-    explanation: 'ApplicationContext extends BeanFactory and provides additional enterprise features like event publication and internationalization.'
   },
   {
     id: 18,
@@ -645,7 +628,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which annotation is used for conditional bean creation?',
     options: ['@Profile', '@Conditional', '@Component', '@Bean'],
     correctAnswer: 1,
-    explanation: '@Conditional allows conditional bean creation based on specified conditions and custom Condition implementations.'
   },
   {
     id: 19,
@@ -658,7 +640,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Enable lazy initialization'
     ],
     correctAnswer: 1,
-    explanation: '@PreDestroy marks methods to be executed before the bean is removed from the container.'
   },
   {
     id: 20,
@@ -666,7 +647,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which approach provides better testability in Spring?',
     options: ['Field injection', 'Setter injection', 'Constructor injection', 'Static injection'],
     correctAnswer: 2,
-    explanation: 'Constructor injection provides better testability as dependencies can be easily provided in unit tests without Spring container.'
   },
   {
     id: 21,
@@ -674,7 +654,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'What does IoC stand for?',
     options: ['Input Output Control', 'Inversion of Control', 'Integration of Components', 'Instance Object Creation'],
     correctAnswer: 1,
-    explanation: 'IoC stands for Inversion of Control, where control of object creation is transferred to an external container.'
   },
   {
     id: 22,
@@ -682,7 +661,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which method can be used to explicitly define beans in Java configuration?',
     options: ['@Component', '@Service', '@Bean', '@Autowired'],
     correctAnswer: 2,
-    explanation: '@Bean is used on methods within @Configuration classes to explicitly declare beans.'
   },
   {
     id: 23,
@@ -695,7 +673,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Better performance'
     ],
     correctAnswer: 1,
-    explanation: 'Dependency injection promotes loose coupling between components and makes testing easier by allowing mock dependencies.'
   },
 
   // INTERMEDIATE QUIZ QUESTIONS (24 questions)
@@ -705,7 +682,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'What is the front controller in Spring MVC?',
     options: ['HandlerMapping', 'DispatcherServlet', 'ViewResolver', 'ModelAndView'],
     correctAnswer: 1,
-    explanation: 'DispatcherServlet acts as the front controller, handling all HTTP requests and coordinating MVC components.'
   },
   {
     id: 25,
@@ -718,7 +694,6 @@ export const quizQuestions: QuizQuestion[] = [
       '@Controller is for REST APIs only'
     ],
     correctAnswer: 1,
-    explanation: '@Controller returns view names, while @RestController combines @Controller and @ResponseBody to return serialized data.'
   },
   {
     id: 26,
@@ -726,7 +701,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which annotation extracts values from URI path segments?',
     options: ['@RequestParam', '@PathVariable', '@RequestBody', '@ModelAttribute'],
     correctAnswer: 1,
-    explanation: '@PathVariable extracts values from URI template variables, enabling RESTful URL patterns.'
   },
   {
     id: 27,
@@ -739,7 +713,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Handle exceptions'
     ],
     correctAnswer: 1,
-    explanation: '@Transactional enables declarative transaction management, wrapping method execution in a transaction.'
   },
   {
     id: 28,
@@ -747,7 +720,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which transaction propagation creates a new transaction always?',
     options: ['REQUIRED', 'REQUIRES_NEW', 'SUPPORTS', 'MANDATORY'],
     correctAnswer: 1,
-    explanation: 'REQUIRES_NEW always creates a new transaction, suspending any existing transaction.'
   },
   {
     id: 29,
@@ -755,7 +727,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'What does AOP stand for?',
     options: ['Abstract Object Programming', 'Aspect-Oriented Programming', 'Application Object Processing', 'Automated Operation Patterns'],
     correctAnswer: 1,
-    explanation: 'AOP stands for Aspect-Oriented Programming, enabling separation of cross-cutting concerns.'
   },
   {
     id: 30,
@@ -763,7 +734,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which advice type wraps around method execution?',
     options: ['@Before', '@After', '@Around', '@AfterReturning'],
     correctAnswer: 2,
-    explanation: '@Around advice wraps around method execution, providing full control over method invocation.'
   },
   {
     id: 31,
@@ -776,7 +746,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Connecting to web services'
     ],
     correctAnswer: 1,
-    explanation: 'JdbcTemplate simplifies JDBC operations by handling resource management and eliminating boilerplate code.'
   },
   {
     id: 32,
@@ -784,7 +753,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which annotation marks a class as an aspect?',
     options: ['@Component', '@Aspect', '@Advice', '@Pointcut'],
     correctAnswer: 1,
-    explanation: '@Aspect marks a class as an aspect containing advice methods for cross-cutting concerns.'
   },
   {
     id: 33,
@@ -792,7 +760,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'What is the default transaction propagation?',
     options: ['REQUIRES_NEW', 'REQUIRED', 'SUPPORTS', 'NEVER'],
     correctAnswer: 1,
-    explanation: 'REQUIRED is the default propagation, joining existing transactions or creating new ones if none exist.'
   },
   {
     id: 34,
@@ -800,7 +767,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which annotation validates method parameters or return values?',
     options: ['@Validated', '@Valid', '@NotNull', '@Size'],
     correctAnswer: 1,
-    explanation: '@Valid triggers JSR-303 validation on method parameters or return values.'
   },
   {
     id: 35,
@@ -813,7 +779,6 @@ export const quizQuestions: QuizQuestion[] = [
       '@Bean, @Autowired, @Value'
     ],
     correctAnswer: 1,
-    explanation: '@SpringBootApplication combines @Configuration, @EnableAutoConfiguration, and @ComponentScan.'
   },
   {
     id: 36,
@@ -821,7 +786,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which Spring Boot feature reduces manual configuration?',
     options: ['Component scanning', 'Auto-configuration', 'Dependency injection', 'AOP'],
     correctAnswer: 1,
-    explanation: 'Auto-configuration automatically configures Spring applications based on classpath and existing beans.'
   },
   {
     id: 37,
@@ -829,7 +793,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'What annotation is used for handling application events?',
     options: ['@EventHandler', '@EventListener', '@ApplicationEvent', '@Listener'],
     correctAnswer: 1,
-    explanation: '@EventListener marks methods as event listeners for handling application events.'
   },
   {
     id: 38,
@@ -837,7 +800,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which annotation enables caching for a method?',
     options: ['@Cache', '@Cacheable', '@CacheResult', '@Cached'],
     correctAnswer: 1,
-    explanation: '@Cacheable enables declarative caching for methods, storing results in configured caches.'
   },
   {
     id: 39,
@@ -850,7 +812,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Define entity mappings'
     ],
     correctAnswer: 1,
-    explanation: '@Repository marks DAO classes and enables automatic exception translation from database-specific to Spring exceptions.'
   },
   {
     id: 40,
@@ -858,7 +819,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which annotation removes entries from cache?',
     options: ['@CacheEvict', '@CacheRemove', '@CacheDelete', '@CacheClear'],
     correctAnswer: 0,
-    explanation: '@CacheEvict removes entries from cache, either specific entries or clearing entire cache.'
   },
   {
     id: 41,
@@ -871,7 +831,6 @@ export const quizQuestions: QuizQuestion[] = [
       'A security framework'
     ],
     correctAnswer: 1,
-    explanation: 'Spring Data JPA simplifies data access using JPA by providing repository abstractions and reducing boilerplate code.'
   },
   {
     id: 42,
@@ -879,7 +838,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which HTTP methods does @GetMapping handle?',
     options: ['GET and POST', 'Only GET', 'GET and PUT', 'All HTTP methods'],
     correctAnswer: 1,
-    explanation: '@GetMapping is a specialized version of @RequestMapping that handles only HTTP GET requests.'
   },
   {
     id: 43,
@@ -892,7 +850,6 @@ export const quizQuestions: QuizQuestion[] = [
       '@RequestBody is for GET requests only'
     ],
     correctAnswer: 1,
-    explanation: '@RequestParam extracts query parameters or form data, while @RequestBody binds the entire HTTP request body.'
   },
   {
     id: 44,
@@ -900,7 +857,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which advice executes regardless of method outcome?',
     options: ['@Before', '@AfterReturning', '@After', '@AfterThrowing'],
     correctAnswer: 2,
-    explanation: '@After advice executes after method completion regardless of outcome, similar to a finally block.'
   },
   {
     id: 45,
@@ -913,7 +869,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Exception handling'
     ],
     correctAnswer: 1,
-    explanation: 'Transaction isolation controls how concurrent transactions interact and what changes they can see from each other.'
   },
   {
     id: 46,
@@ -921,7 +876,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which pattern does Spring MVC follow?',
     options: ['Model-View-Controller', 'Observer', 'Factory', 'Singleton'],
     correctAnswer: 0,
-    explanation: 'Spring MVC follows the Model-View-Controller design pattern for building web applications.'
   },
   {
     id: 47,
@@ -934,7 +888,6 @@ export const quizQuestions: QuizQuestion[] = [
       'A security component'
     ],
     correctAnswer: 1,
-    explanation: 'ModelAndView contains both model data and view name, used by controllers to return data and specify the view.'
   },
 
   // EXPERT QUIZ QUESTIONS (23 questions)
@@ -944,7 +897,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'What is Spring WebFlux built on?',
     options: ['Servlet API', 'Project Reactor', 'Netty only', 'Traditional blocking I/O'],
     correctAnswer: 1,
-    explanation: 'Spring WebFlux is built on Project Reactor, providing reactive programming with Mono and Flux types.'
   },
   {
     id: 49,
@@ -952,7 +904,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which types represent reactive streams in Spring WebFlux?',
     options: ['Stream and Optional', 'Mono and Flux', 'Future and Promise', 'Observable and Single'],
     correctAnswer: 1,
-    explanation: 'Mono represents 0-1 element and Flux represents 0-N elements in reactive streams.'
   },
   {
     id: 50,
@@ -965,7 +916,6 @@ export const quizQuestions: QuizQuestion[] = [
       '@MockBean is only for web tests'
     ],
     correctAnswer: 1,
-    explanation: '@MockBean creates mocks in Spring application context, while @Mock creates mocks outside Spring context.'
   },
   {
     id: 51,
@@ -978,7 +928,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Manage transactions'
     ],
     correctAnswer: 1,
-    explanation: 'BeanPostProcessor allows custom modification of bean instances before and after initialization.'
   },
   {
     id: 52,
@@ -986,7 +935,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which annotation enables asynchronous method execution?',
     options: ['@Transactional', '@Async', '@Parallel', '@NonBlocking'],
     correctAnswer: 1,
-    explanation: '@Async enables asynchronous method execution in separate threads using configured task executors.'
   },
   {
     id: 53,
@@ -999,7 +947,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Creating REST APIs'
     ],
     correctAnswer: 1,
-    explanation: 'Spring Boot Actuator provides production-ready features including health checks, metrics, and management endpoints.'
   },
   {
     id: 54,
@@ -1012,7 +959,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Managing security'
     ],
     correctAnswer: 1,
-    explanation: '@ConfigurationProperties binds external properties to Java objects with type-safe configuration management.'
   },
   {
     id: 55,
@@ -1020,7 +966,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which Spring Cloud component provides service discovery?',
     options: ['Spring Cloud Gateway', 'Spring Cloud Config', 'Spring Cloud Netflix Eureka', 'Spring Cloud Stream'],
     correctAnswer: 2,
-    explanation: 'Spring Cloud Netflix Eureka provides service discovery capabilities for microservices.'
   },
   {
     id: 56,
@@ -1033,7 +978,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Spring Process Language'
     ],
     correctAnswer: 1,
-    explanation: 'SpEL (Spring Expression Language) is a powerful expression language for querying and manipulating objects at runtime.'
   },
   {
     id: 57,
@@ -1041,7 +985,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which annotation is used for scheduled task execution?',
     options: ['@Timer', '@Scheduled', '@Cron', '@Periodic'],
     correctAnswer: 1,
-    explanation: '@Scheduled enables periodic task execution with support for cron expressions and fixed delays.'
   },
   {
     id: 58,
@@ -1054,7 +997,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Enable class scanning'
     ],
     correctAnswer: 1,
-    explanation: '@ConditionalOnClass creates beans only when specified classes are present on the classpath.'
   },
   {
     id: 59,
@@ -1062,7 +1004,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which proxy mechanism does Spring use by default?',
     options: ['CGLIB proxies', 'JDK dynamic proxies for interfaces', 'AspectJ weaving', 'No proxies'],
     correctAnswer: 1,
-    explanation: 'Spring uses JDK dynamic proxies for interface-based beans and CGLIB proxies for class-based beans.'
   },
   {
     id: 60,
@@ -1075,7 +1016,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Create proxy beans'
     ],
     correctAnswer: 1,
-    explanation: 'BeanFactoryPostProcessor modifies bean definitions before beans are instantiated.'
   },
   {
     id: 61,
@@ -1083,7 +1023,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which return type should async methods use for results?',
     options: ['void only', 'Future or CompletableFuture', 'String', 'Object'],
     correctAnswer: 1,
-    explanation: 'Async methods should return void, Future, CompletableFuture, or other async types for result handling.'
   },
   {
     id: 62,
@@ -1091,7 +1030,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'What is Spring\'s testing slice for web layer?',
     options: ['@DataJpaTest', '@WebMvcTest', '@JsonTest', '@RestClientTest'],
     correctAnswer: 1,
-    explanation: '@WebMvcTest provides a testing slice focused on Spring MVC components and web layer testing.'
   },
   {
     id: 63,
@@ -1104,7 +1042,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Error handling'
     ],
     correctAnswer: 1,
-    explanation: 'Backpressure controls data flow when consumers process data slower than producers generate it.'
   },
   {
     id: 64,
@@ -1112,7 +1049,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which component resolves property placeholders in Spring?',
     options: ['PropertyResolver', 'PropertySourcesPlaceholderConfigurer', 'Environment', 'All of the above'],
     correctAnswer: 3,
-    explanation: 'All mentioned components work together to resolve property placeholders: Environment, PropertyResolver, and PropertySourcesPlaceholderConfigurer.'
   },
   {
     id: 65,
@@ -1125,7 +1061,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Manage security'
     ],
     correctAnswer: 1,
-    explanation: 'Custom starters package related dependencies and auto-configuration for easy inclusion in projects.'
   },
   {
     id: 66,
@@ -1133,7 +1068,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which annotation enables caching configuration?',
     options: ['@EnableCaching', '@CacheConfig', '@Cacheable', '@CacheEnabled'],
     correctAnswer: 0,
-    explanation: '@EnableCaching enables Spring\'s annotation-driven cache management capability.'
   },
   {
     id: 67,
@@ -1146,7 +1080,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Handling concurrent access'
     ],
     correctAnswer: 1,
-    explanation: 'Transaction synchronization allows registering callbacks for transaction lifecycle events like commit and rollback.'
   },
   {
     id: 68,
@@ -1154,7 +1087,6 @@ export const quizQuestions: QuizQuestion[] = [
     question: 'Which scope requires custom implementation of Scope interface?',
     options: ['Singleton', 'Prototype', 'Custom scopes', 'Request'],
     correctAnswer: 2,
-    explanation: 'Custom scopes require implementing the Scope interface to define custom bean lifecycle management.'
   },
   {
     id: 69,
@@ -1167,7 +1099,6 @@ export const quizQuestions: QuizQuestion[] = [
       'Reduced memory usage'
     ],
     correctAnswer: 1,
-    explanation: 'Reactive programming provides better performance with high concurrency through non-blocking, asynchronous operations.'
   },
   {
     id: 70,
@@ -1180,6 +1111,5 @@ export const quizQuestions: QuizQuestion[] = [
       '@Primary annotation'
     ],
     correctAnswer: 1,
-    explanation: '@ConditionalOn* annotations (OnClass, OnMissingBean, OnProperty, etc.) enable conditional auto-configuration based on various conditions.'
   }
 ];

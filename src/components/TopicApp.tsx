@@ -27,9 +27,9 @@ const TopicApp: React.FC = () => {
     }
   }, [topicName, setCurrentTopic]);
 
-  // Support React and Java topics
+  // Support React, Java, Spring, and API topics
   useEffect(() => {
-    if (topicName && !['react', 'java'].includes(topicName)) {
+    if (topicName && !['react', 'java', 'spring', 'api'].includes(topicName)) {
       navigate('/learn');
       return;
     }
