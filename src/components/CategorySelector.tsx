@@ -6,21 +6,36 @@ interface CategorySelectorProps {
   onViewChange: (view: 'flashcards' | 'quiz') => void;
   selectedCategory: Category;
   categoryData: Record<Category, CategoryData>;
+  topicName: string;
 }
 
 const CategorySelector: React.FC<CategorySelectorProps> = ({
   onCategorySelect,
   onViewChange,
   selectedCategory,
-  categoryData
+  categoryData,
+  topicName
 }) => {
   const categories: Category[] = ['basics', 'intermediate', 'expert'];
+
+  const getTopicDisplayName = (topic: string): string => {
+    const topicNames: { [key: string]: string } = {
+      react: 'React',
+      java: 'Java',
+      spring: 'Spring',
+      api: 'API',
+      sql: 'SQL',
+      kubernetes: 'Kubernetes',
+      kafka: 'Kafka',
+    };
+    return topicNames[topic] || topic;
+  };
 
   return (
     <div className="category-selector">
       <div className="welcome-section">
-        <h2>Welcome to React Learning!</h2>
-        <p>Master React fundamentals with interactive flashcards and quizzes</p>
+        <h2>Welcome to {getTopicDisplayName(topicName)} Learning!</h2>
+        <p>Master {getTopicDisplayName(topicName)} fundamentals with interactive flashcards and quizzes</p>
       </div>
 
       <div className="category-grid">

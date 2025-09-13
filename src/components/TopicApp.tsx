@@ -117,6 +117,7 @@ const TopicApp: React.FC = () => {
                 onViewChange={handleViewChange}
                 selectedCategory={selectedCategory}
                 categoryData={topicData.categoryData}
+                topicName={topicName}
               />
             )}
 
