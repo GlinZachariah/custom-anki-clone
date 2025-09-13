@@ -151,7 +151,7 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack }) => {
               {showResult ? 'Hide Details' : 'Show Details'}
             </button>
             <button className="secondary-button" onClick={onBack}>
-              Back to Categories
+              ← Back to Categories
             </button>
           </div>
 
@@ -258,7 +258,7 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack }) => {
 
       <div className="quiz-controls">
         <button className="secondary-button" onClick={onBack}>
-          Exit Quiz
+          ← Back to Categories
         </button>
         <button 
           className="primary-button"
