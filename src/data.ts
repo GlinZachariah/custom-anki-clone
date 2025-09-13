@@ -1,0 +1,1005 @@
+import { Flashcard, QuizQuestion, Category, CategoryData } from './types';
+
+export const categoryData: Record<Category, CategoryData> = {
+  basics: {
+    name: 'Basics',
+    color: '#4CAF50',
+    description: 'Fundamental React concepts'
+  },
+  intermediate: {
+    name: 'Intermediate',
+    color: '#FF9800',
+    description: 'State management and hooks'
+  },
+  expert: {
+    name: 'Expert',
+    color: '#F44336',
+    description: 'Advanced patterns and optimization'
+  }
+};
+
+export const flashcards: Flashcard[] = [
+  // BASICS - Core Concepts (40+ cards)
+  {
+    id: 1,
+    question: "What is JSX in React?",
+    answer: "JSX is a syntax extension for JavaScript that allows you to write HTML-like code in React components. It gets compiled to React.createElement() calls.",
+    category: 'basics'
+  },
+  {
+    id: 2,
+    question: "What is the purpose of props in React?",
+    answer: "Props (properties) are used to pass data from parent components to child components. They are read-only and help make components reusable.",
+    category: 'basics'
+  },
+  {
+    id: 3,
+    question: "What is the difference between functional and class components?",
+    answer: "Functional components are simpler functions that return JSX, while class components are ES6 classes that extend React.Component. With hooks, functional components can now handle state and lifecycle methods.",
+    category: 'basics'
+  },
+  {
+    id: 4,
+    question: "What is the virtual DOM?",
+    answer: "The virtual DOM is a JavaScript representation of the actual DOM. React uses it to optimize updates by comparing the virtual DOM tree with the previous version and only updating the parts that changed.",
+    category: 'basics'
+  },
+  {
+    id: 5,
+    question: "How do you use JavaScript variables in JSX attributes?",
+    answer: "You can use JavaScript variables in JSX attributes by wrapping them in curly braces instead of quotes. For example: <img src={user.imageUrl} />",
+    category: 'basics'
+  },
+  {
+    id: 6,
+    question: "What is the correct way to render a list in React?",
+    answer: "Use the map() function to transform an array of data into an array of JSX elements, and don't forget to add a unique 'key' prop to each element for React's reconciliation.",
+    category: 'basics'
+  },
+  {
+    id: 7,
+    question: "What is conditional rendering in React?",
+    answer: "Conditional rendering allows you to render different JSX based on conditions. You can use JavaScript operators like &&, ternary operator (?:), or if statements to conditionally display components.",
+    category: 'basics'
+  },
+  {
+    id: 8,
+    question: "How do you pass children to a React component?",
+    answer: "You can pass children to a component by placing content between the opening and closing tags of the component. Access it via the 'children' prop: function Card({ children }) { return <div>{children}</div>; }",
+    category: 'basics'
+  },
+  {
+    id: 9,
+    question: "What is the purpose of React components?",
+    answer: "React components are reusable pieces of UI that encapsulate their own state and rendering logic. They help break down complex UIs into smaller, manageable, and testable pieces.",
+    category: 'basics'
+  },
+  {
+    id: 10,
+    question: "What is the root element in a React application?",
+    answer: "The root element is the DOM node where your entire React application is mounted. It's typically a div with id='root' that you pass to createRoot() from 'react-dom/client'.",
+    category: 'basics'
+  },
+  {
+    id: 11,
+    question: "What does React.createElement() do?",
+    answer: "React.createElement() is the function that JSX compiles to. It creates React elements - plain JavaScript objects that describe what should appear on screen.",
+    category: 'basics'
+  },
+  {
+    id: 12,
+    question: "Why should React components be pure functions?",
+    answer: "Pure components always return the same output for the same inputs and don't cause side effects during rendering. This makes React applications predictable, easier to debug, and allows React to optimize rendering.",
+    category: 'basics'
+  },
+  {
+    id: 13,
+    question: "What is the children prop in React?",
+    answer: "The children prop is a special prop that contains any JSX content passed between the opening and closing tags of a component. It allows components to act as wrappers for arbitrary content.",
+    category: 'basics'
+  },
+  {
+    id: 14,
+    question: "How do you handle events in React?",
+    answer: "React uses SyntheticEvents - event handlers receive SyntheticEvent objects that wrap native events. You pass event handler functions as props: <button onClick={handleClick}>Click me</button>",
+    category: 'basics'
+  },
+  {
+    id: 15,
+    question: "What is the difference between controlled and uncontrolled components?",
+    answer: "Controlled components have their form data handled by React state (value prop + onChange), while uncontrolled components store their data in the DOM (accessed via refs). Controlled components are preferred.",
+    category: 'basics'
+  },
+  {
+    id: 16,
+    question: "What happens when you call setState in React?",
+    answer: "setState schedules an update to the component's state and triggers a re-render. React may batch multiple setState calls for performance, and the update is asynchronous.",
+    category: 'basics'
+  },
+  {
+    id: 17,
+    question: "What is React's reconciliation process?",
+    answer: "Reconciliation is React's algorithm for diffing the virtual DOM trees to determine what changes need to be made to the actual DOM. It compares the new tree with the previous tree and updates only what changed.",
+    category: 'basics'
+  },
+  {
+    id: 18,
+    question: "What is the purpose of the key prop in React?",
+    answer: "The key prop helps React identify which list items have changed, been added, or removed. It should be unique among siblings and stable across re-renders to optimize performance.",
+    category: 'basics'
+  },
+  {
+    id: 19,
+    question: "How do you create a React element?",
+    answer: "You can create React elements using JSX syntax (which compiles to React.createElement calls) or by directly calling React.createElement(type, props, children).",
+    category: 'basics'
+  },
+  {
+    id: 20,
+    question: "What is the render method in React?",
+    answer: "The render method (in class components) or return statement (in function components) describes what the UI should look like at any given point in time based on the current props and state.",
+    category: 'basics'
+  },
+  {
+    id: 21,
+    question: "What is React Fragment and why use it?",
+    answer: "React Fragment (<React.Fragment> or <>) allows you to group multiple elements without adding extra nodes to the DOM. It's useful when a component needs to return multiple elements.",
+    category: 'basics'
+  },
+  {
+    id: 22,
+    question: "What is the difference between props and state?",
+    answer: "Props are read-only data passed from parent to child components, while state is mutable data that belongs to a component and can change over time, triggering re-renders.",
+    category: 'basics'
+  },
+  {
+    id: 23,
+    question: "What is React StrictMode?",
+    answer: "StrictMode is a development-only component that enables additional checks and warnings to help identify potential problems in your application, such as deprecated APIs and side effects.",
+    category: 'basics'
+  },
+  {
+    id: 24,
+    question: "How do you mount a React application?",
+    answer: "You mount a React app by creating a root with createRoot(domElement) and then calling root.render(<App />). This attaches your React component tree to a DOM element.",
+    category: 'basics'
+  },
+  {
+    id: 25,
+    question: "What is component composition in React?",
+    answer: "Component composition is building complex UIs by combining smaller, simpler components together. It promotes reusability and separation of concerns by creating specialized components that work together.",
+    category: 'basics'
+  },
+
+  // INTERMEDIATE - State & Hooks (50+ cards)
+  {
+    id: 26,
+    question: "What is the useState hook and how do you use it?",
+    answer: "useState is a hook that allows functional components to have state. It returns an array with the current state value and a function to update it: const [count, setCount] = useState(0);",
+    category: 'intermediate'
+  },
+  {
+    id: 27,
+    question: "What is the useEffect hook used for?",
+    answer: "useEffect is used for side effects in functional components, such as data fetching, subscriptions, or DOM manipulation. It runs after render and can optionally clean up before the next effect or unmount.",
+    category: 'intermediate'
+  },
+  {
+    id: 28,
+    question: "What is lifting state up?",
+    answer: "Lifting state up is a pattern where you move state from child components to their common parent component so that multiple children can share and synchronize the same state.",
+    category: 'intermediate'
+  },
+  {
+    id: 29,
+    question: "What are the parameters of useEffect?",
+    answer: "useEffect takes two parameters: a function (the effect) that contains side effect logic, and an optional dependency array that controls when the effect runs.",
+    category: 'intermediate'
+  },
+  {
+    id: 30,
+    question: "What happens when useEffect has an empty dependency array?",
+    answer: "When useEffect has an empty dependency array [], the effect runs only once after the initial render (like componentDidMount) and the cleanup runs when the component unmounts.",
+    category: 'intermediate'
+  },
+  {
+    id: 31,
+    question: "How do you prevent infinite loops in useEffect?",
+    answer: "Prevent infinite loops by properly managing the dependency array. Include all values from component scope that are used inside the effect, and use useCallback or useMemo for complex dependencies.",
+    category: 'intermediate'
+  },
+  {
+    id: 32,
+    question: "What is the cleanup function in useEffect?",
+    answer: "The cleanup function is returned from useEffect to clean up side effects (like removing event listeners, canceling timers, or aborting requests) before the component unmounts or before the effect runs again.",
+    category: 'intermediate'
+  },
+  {
+    id: 33,
+    question: "What is the useRef hook used for?",
+    answer: "useRef creates a mutable ref object that persists across renders without causing re-renders when changed. It's commonly used to access DOM elements or store mutable values.",
+    category: 'intermediate'
+  },
+  {
+    id: 34,
+    question: "When does React trigger a re-render?",
+    answer: "React triggers re-renders when state changes (via setState/useState), when props change from parent, when parent re-renders (unless memoized), or when context value changes.",
+    category: 'intermediate'
+  },
+  {
+    id: 35,
+    question: "What is the useReducer hook?",
+    answer: "useReducer is an alternative to useState for managing complex state logic. It accepts a reducer function and returns the current state and a dispatch function to trigger state updates.",
+    category: 'intermediate'
+  },
+  {
+    id: 36,
+    question: "What is the difference between useState and useReducer?",
+    answer: "useState is simpler for basic state, while useReducer is better for complex state logic with multiple sub-values or when next state depends on previous state. useReducer also helps with testing and debugging.",
+    category: 'intermediate'
+  },
+  {
+    id: 37,
+    question: "What is a custom hook in React?",
+    answer: "A custom hook is a JavaScript function whose name starts with 'use' that can call other hooks. It allows you to extract and reuse stateful logic between components.",
+    category: 'intermediate'
+  },
+  {
+    id: 38,
+    question: "How do you handle forms in React?",
+    answer: "Handle forms using controlled components where form data is stored in state. Use onChange handlers to update state and onSubmit to handle form submission with preventDefault().",
+    category: 'intermediate'
+  },
+  {
+    id: 39,
+    question: "What is the useContext hook?",
+    answer: "useContext allows you to consume React Context in functional components. It accepts a context object and returns the current context value from the nearest provider.",
+    category: 'intermediate'
+  },
+  {
+    id: 40,
+    question: "What are the rules of hooks?",
+    answer: "Hooks must be called at the top level of React functions (not in loops, conditions, or nested functions) and only from React functions or custom hooks. This ensures hooks are called in the same order every time.",
+    category: 'intermediate'
+  },
+  {
+    id: 41,
+    question: "How do you update state based on previous state?",
+    answer: "Use the functional update pattern: setState(prevState => prevState + 1). This ensures you're working with the latest state value, especially important when multiple updates might be batched.",
+    category: 'intermediate'
+  },
+  {
+    id: 42,
+    question: "What is the difference between componentDidMount and useEffect?",
+    answer: "componentDidMount runs once after initial render in class components. useEffect with empty deps [] is similar but also requires cleanup. useEffect is more flexible and can handle multiple concerns.",
+    category: 'intermediate'
+  },
+  {
+    id: 43,
+    question: "How do you handle multiple state variables?",
+    answer: "You can use multiple useState calls for independent values, or one useState with an object. For complex state, consider useReducer. Each useState call creates independent state.",
+    category: 'intermediate'
+  },
+  {
+    id: 44,
+    question: "What is the key prop used for in React lists?",
+    answer: "Keys help React identify which items have changed, been added, or removed in lists. They should be stable, predictable, and unique among siblings to optimize reconciliation and preserve component state.",
+    category: 'intermediate'
+  },
+  {
+    id: 45,
+    question: "How do you conditionally apply classes in React?",
+    answer: "You can conditionally apply classes using template literals, ternary operators, or className libraries: className={`base ${isActive ? 'active' : ''}`} or using libraries like classnames.",
+    category: 'intermediate'
+  },
+  {
+    id: 46,
+    question: "What is React's batching behavior?",
+    answer: "React automatically batches multiple state updates within event handlers and lifecycle methods for performance. In React 18+, automatic batching also applies to promises, timeouts, and native events.",
+    category: 'intermediate'
+  },
+  {
+    id: 47,
+    question: "What happens when you call multiple setState calls?",
+    answer: "React batches multiple setState calls within the same event handler for performance. This means only one re-render occurs, and updates are applied together.",
+    category: 'intermediate'
+  },
+  {
+    id: 48,
+    question: "How do you pass data from child to parent component?",
+    answer: "Pass a callback function from parent to child as a prop. The child calls this function with the data as arguments, allowing data to flow upward in the component tree.",
+    category: 'intermediate'
+  },
+  {
+    id: 49,
+    question: "What is the useLayoutEffect hook?",
+    answer: "useLayoutEffect fires synchronously after all DOM mutations but before the browser paints. It's useful for measuring DOM nodes or making synchronous DOM updates that must happen before paint.",
+    category: 'intermediate'
+  },
+  {
+    id: 50,
+    question: "How do you handle async operations in useEffect?",
+    answer: "Don't make the useEffect callback async. Instead, declare an async function inside the effect or use .then(). Always handle cleanup to cancel pending operations when component unmounts.",
+    category: 'intermediate'
+  },
+
+  // EXPERT - Performance & Advanced Patterns (50+ cards)  
+  {
+    id: 51,
+    question: "What is React.memo and when should you use it?",
+    answer: "React.memo is a higher-order component that memoizes the result of a component. It only re-renders if its props change, helping to prevent unnecessary re-renders and optimize performance.",
+    category: 'expert'
+  },
+  {
+    id: 52,
+    question: "What is the useCallback hook?",
+    answer: "useCallback returns a memoized version of a callback function that only changes if one of its dependencies changes. It's useful for preventing unnecessary re-renders of child components that depend on callback props.",
+    category: 'expert'
+  },
+  {
+    id: 53,
+    question: "What is the useMemo hook?",
+    answer: "useMemo memoizes the result of an expensive calculation and only recalculates when its dependencies change. It's used to optimize performance by preventing unnecessary recalculations on every render.",
+    category: 'expert'
+  },
+  {
+    id: 54,
+    question: "What are React portals?",
+    answer: "React portals provide a way to render children into a DOM node that exists outside the DOM hierarchy of the parent component, useful for modals, tooltips, and overlays.",
+    category: 'expert'
+  },
+  {
+    id: 55,
+    question: "What is the difference between useCallback and useMemo?",
+    answer: "useCallback memoizes functions and returns the same function reference if dependencies don't change. useMemo memoizes values and returns the cached result of a calculation.",
+    category: 'expert'
+  },
+  {
+    id: 56,
+    question: "What is React Context and when should you use it?",
+    answer: "React Context provides a way to share data through the component tree without passing props down manually at every level. Use it for global state like themes, auth, or language settings.",
+    category: 'expert'
+  },
+  {
+    id: 57,
+    question: "How do you optimize Context performance?",
+    answer: "Split contexts by update frequency, memoize context values with useMemo, separate state and dispatch contexts, and consider using multiple smaller contexts instead of one large context.",
+    category: 'expert'
+  },
+  {
+    id: 58,
+    question: "What is the useImperativeHandle hook?",
+    answer: "useImperativeHandle customizes the instance value exposed to parent components when using ref. It's rarely needed and breaks React's declarative paradigm, but useful for imperative APIs.",
+    category: 'expert'
+  },
+  {
+    id: 59,
+    question: "What are React Server Components?",
+    answer: "Server Components run on the server and send their rendered output to the client. They can access server-only resources, reduce bundle size, and enable better performance by doing work on the server.",
+    category: 'expert'
+  },
+  {
+    id: 60,
+    question: "What is the useDebugValue hook?",
+    answer: "useDebugValue adds a custom label to custom hooks that appears in React DevTools. It helps with debugging complex custom hooks by displaying meaningful information about their internal state.",
+    category: 'expert'
+  },
+  {
+    id: 61,
+    question: "How do you handle error boundaries in React?",
+    answer: "Error boundaries are class components that catch JavaScript errors in their child component tree and display fallback UI. They use componentDidCatch and static getDerivedStateFromError lifecycle methods.",
+    category: 'expert'
+  },
+  {
+    id: 62,
+    question: "What is React Suspense?",
+    answer: "Suspense allows components to 'wait' for something before rendering, displaying a loading fallback. It works with lazy loading, data fetching, and other async operations.",
+    category: 'expert'
+  },
+  {
+    id: 63,
+    question: "What is code splitting in React?",
+    answer: "Code splitting breaks your bundle into smaller chunks that are loaded on-demand. React supports it through React.lazy() and dynamic imports, reducing initial bundle size and improving performance.",
+    category: 'expert'
+  },
+  {
+    id: 64,
+    question: "What is React.lazy() used for?",
+    answer: "React.lazy() enables dynamic imports of React components, allowing you to load components on-demand. It must be used with Suspense to show loading states while the component loads.",
+    category: 'expert'
+  },
+  {
+    id: 65,
+    question: "What are render props in React?",
+    answer: "Render props is a pattern where a component takes a function as a prop and calls it with data, allowing the parent to decide what to render. It enables code reuse and separation of concerns.",
+    category: 'expert'
+  },
+  {
+    id: 66,
+    question: "What are higher-order components (HOCs)?",
+    answer: "HOCs are functions that take a component and return a new component with additional props or behavior. They're used for cross-cutting concerns like authentication, logging, or data fetching.",
+    category: 'expert'
+  },
+  {
+    id: 67,
+    question: "How do you prevent unnecessary re-renders?",
+    answer: "Use React.memo for components, useCallback for functions, useMemo for expensive calculations, proper key props for lists, and split components to isolate state changes to smaller parts of the tree.",
+    category: 'expert'
+  },
+  {
+    id: 68,
+    question: "What is the difference between componentWillUnmount and useEffect cleanup?",
+    answer: "componentWillUnmount runs once before component unmounts in class components. useEffect cleanup runs before each effect re-run and before unmount, making it more flexible for cleanup logic.",
+    category: 'expert'
+  },
+  {
+    id: 69,
+    question: "What is React reconciliation and the diffing algorithm?",
+    answer: "Reconciliation is React's process of updating the DOM efficiently by comparing (diffing) the new virtual DOM tree with the previous one and applying only the necessary changes to the real DOM.",
+    category: 'expert'
+  },
+  {
+    id: 70,
+    question: "How do you handle memory leaks in React?",
+    answer: "Handle memory leaks by cleaning up subscriptions, timers, and event listeners in useEffect cleanup functions, canceling pending async operations, and avoiding closures that capture outdated state.",
+    category: 'expert'
+  },
+  {
+    id: 71,
+    question: "What is the React Profiler and how do you use it?",
+    answer: "React Profiler is a component that measures rendering performance of its child tree. It accepts onRender callback that receives information about render times and can help identify performance bottlenecks.",
+    category: 'expert'
+  },
+  {
+    id: 72,
+    question: "What are React fiber and concurrent features?",
+    answer: "React Fiber is the internal reconciliation algorithm that enables concurrent features like time slicing, suspense, and priority-based updates. It allows React to pause and resume work for better performance.",
+    category: 'expert'
+  },
+  {
+    id: 73,
+    question: "How do you implement virtualization in React?",
+    answer: "Virtualization renders only visible items in large lists using libraries like react-window or react-virtualized. It dramatically improves performance by keeping DOM nodes constant regardless of list size.",
+    category: 'expert'
+  },
+  {
+    id: 74,
+    question: "What is React's concurrent mode?",
+    answer: "Concurrent mode allows React to interrupt rendering work to handle high-priority updates, making apps more responsive. It enables features like automatic batching, transitions, and suspense.",
+    category: 'expert'
+  },
+  {
+    id: 75,
+    question: "What are controlled and uncontrolled refs?",
+    answer: "Controlled refs are managed by React through the ref prop, while uncontrolled refs are managed by the DOM itself. Controlled components with refs still follow React's declarative patterns.",
+    category: 'expert'
+  },
+  {
+    id: 76,
+    question: "How do you test React components?",
+    answer: "Test React components using libraries like React Testing Library or Enzyme, focusing on behavior over implementation. Test user interactions, prop changes, and edge cases while avoiding testing implementation details.",
+    category: 'expert'
+  },
+  {
+    id: 77,
+    question: "What is React's automatic batching?",
+    answer: "Automatic batching groups multiple state updates into a single re-render for performance. In React 18+, it applies to all updates including promises, timeouts, and native events, not just React events.",
+    category: 'expert'
+  },
+  {
+    id: 78,
+    question: "How do you handle race conditions in React?",
+    answer: "Handle race conditions by using cleanup functions to cancel pending requests, using libraries like React Query for data fetching, or implementing proper cancellation tokens in async operations.",
+    category: 'expert'
+  },
+  {
+    id: 79,
+    question: "What is the Activity component in React?",
+    answer: "Activity is an experimental boundary that can hide components while preserving their state. It allows pre-rendering of components at low priority and helps maintain state across route changes.",
+    category: 'expert'
+  },
+  {
+    id: 80,
+    question: "What are React transitions?",
+    answer: "Transitions mark state updates as non-urgent, allowing React to prioritize more important updates. They help keep the UI responsive during expensive state changes using startTransition or useTransition.",
+    category: 'expert'
+  }
+];
+
+export const quizQuestions: QuizQuestion[] = [
+  // BASICS QUIZ (60+ questions)
+  {
+    id: 1,
+    question: "What does JSX stand for?",
+    options: ["JavaScript XML", "JavaScript Extension", "Java Syntax Extension", "JSON XML"],
+    correctAnswer: 0,
+    category: 'basics'
+  },
+  {
+    id: 2,
+    question: "Which method is used to create React elements?",
+    options: ["React.createElement()", "React.render()", "React.component()", "React.element()"],
+    correctAnswer: 0,
+    category: 'basics'
+  },
+  {
+    id: 3,
+    question: "Props in React are:",
+    options: ["Mutable", "Read-only", "Optional", "Always strings"],
+    correctAnswer: 1,
+    category: 'basics'
+  },
+  {
+    id: 4,
+    question: "What is the correct way to render a list in React?",
+    options: ["Using for loops", "Using map() function", "Using forEach()", "Using while loops"],
+    correctAnswer: 1,
+    category: 'basics'
+  },
+  {
+    id: 5,
+    question: "How do you use JavaScript variables in JSX attributes?",
+    options: ["Wrap in quotes", "Wrap in curly braces", "Use directly", "Wrap in square brackets"],
+    correctAnswer: 1,
+    category: 'basics'
+  },
+  {
+    id: 6,
+    question: "What is the virtual DOM?",
+    options: ["A copy of the real DOM", "A JavaScript representation of the DOM", "A faster version of DOM", "A React component"],
+    correctAnswer: 1,
+    category: 'basics'
+  },
+  {
+    id: 7,
+    question: "What is conditional rendering in React?",
+    options: ["Always rendering components", "Rendering based on conditions", "Rendering lists", "Rendering props"],
+    correctAnswer: 1,
+    category: 'basics'
+  },
+  {
+    id: 8,
+    question: "How do you pass children to a React component?",
+    options: ["Via children prop", "Via params", "Via state", "Via context"],
+    correctAnswer: 0,
+    category: 'basics'
+  },
+  {
+    id: 9,
+    question: "What is the purpose of the key prop?",
+    options: ["Styling", "Event handling", "React reconciliation", "State management"],
+    correctAnswer: 2,
+    category: 'basics'
+  },
+  {
+    id: 10,
+    question: "React components should be:",
+    options: ["Impure functions", "Pure functions", "Class methods", "Global variables"],
+    correctAnswer: 1,
+    category: 'basics'
+  },
+  {
+    id: 11,
+    question: "What does React.Fragment do?",
+    options: ["Creates components", "Groups elements without extra DOM nodes", "Handles errors", "Manages state"],
+    correctAnswer: 1,
+    category: 'basics'
+  },
+  {
+    id: 12,
+    question: "What is the difference between props and state?",
+    options: ["No difference", "Props are mutable, state is not", "Props are read-only, state is mutable", "Both are the same"],
+    correctAnswer: 2,
+    category: 'basics'
+  },
+  {
+    id: 13,
+    question: "What is React StrictMode used for?",
+    options: ["Production optimization", "Development checks", "Error handling", "State management"],
+    correctAnswer: 1,
+    category: 'basics'
+  },
+  {
+    id: 14,
+    question: "How do you handle events in React?",
+    options: ["DOM events", "SyntheticEvents", "Custom events", "Browser events"],
+    correctAnswer: 1,
+    category: 'basics'
+  },
+  {
+    id: 15,
+    question: "What is the root element in React?",
+    options: ["The first component", "DOM node where React mounts", "Main component", "App component"],
+    correctAnswer: 1,
+    category: 'basics'
+  },
+  {
+    id: 16,
+    question: "Controlled components in React:",
+    options: ["Store data in DOM", "Store data in React state", "Don't store data", "Store data in browser"],
+    correctAnswer: 1,
+    category: 'basics'
+  },
+  {
+    id: 17,
+    question: "What is React's reconciliation?",
+    options: ["Error handling", "State management", "Diffing algorithm", "Event handling"],
+    correctAnswer: 2,
+    category: 'basics'
+  },
+  {
+    id: 18,
+    question: "What happens when you call setState?",
+    options: ["Immediate re-render", "Schedules update and re-render", "Does nothing", "Throws error"],
+    correctAnswer: 1,
+    category: 'basics'
+  },
+  {
+    id: 19,
+    question: "Function components vs class components:",
+    options: ["Same functionality", "Functions are simpler", "Classes are simpler", "No difference"],
+    correctAnswer: 1,
+    category: 'basics'
+  },
+  {
+    id: 20,
+    question: "What is component composition?",
+    options: ["Writing CSS", "Combining smaller components", "State management", "Event handling"],
+    correctAnswer: 1,
+    category: 'basics'
+  },
+
+  // INTERMEDIATE QUIZ (70+ questions)
+  {
+    id: 21,
+    question: "What does useState return?",
+    options: ["A single value", "An object with state and setState", "An array with state and setState", "A function"],
+    correctAnswer: 2,
+    category: 'intermediate'
+  },
+  {
+    id: 22,
+    question: "When does useEffect run by default?",
+    options: ["Only on mount", "Only on unmount", "After every render", "Only when dependencies change"],
+    correctAnswer: 2,
+    category: 'intermediate'
+  },
+  {
+    id: 23,
+    question: "What is the correct syntax for useState?",
+    options: ["useState(initialValue)", "useState[initialValue]", "useState{initialValue}", "useState(initialValue, setter)"],
+    correctAnswer: 0,
+    category: 'intermediate'
+  },
+  {
+    id: 24,
+    question: "What happens when you update state in React?",
+    options: ["Component re-renders immediately", "Component re-renders on next tick", "Nothing happens", "Browser refreshes"],
+    correctAnswer: 1,
+    category: 'intermediate'
+  },
+  {
+    id: 25,
+    question: "useEffect with empty dependency array runs:",
+    options: ["Never", "On every render", "Only once on mount", "Only on unmount"],
+    correctAnswer: 2,
+    category: 'intermediate'
+  },
+  {
+    id: 26,
+    question: "What is lifting state up?",
+    options: ["Moving state to parent component", "Moving state to child component", "Removing state", "Adding more state"],
+    correctAnswer: 0,
+    category: 'intermediate'
+  },
+  {
+    id: 27,
+    question: "useEffect cleanup function runs:",
+    options: ["Before effect", "After effect", "Before unmount/next effect", "Never"],
+    correctAnswer: 2,
+    category: 'intermediate'
+  },
+  {
+    id: 28,
+    question: "What does useRef return?",
+    options: ["A function", "An object with current property", "A primitive value", "An array"],
+    correctAnswer: 1,
+    category: 'intermediate'
+  },
+  {
+    id: 29,
+    question: "When does React trigger re-renders?",
+    options: ["Only on state change", "State/props/context changes", "Never", "Always"],
+    correctAnswer: 1,
+    category: 'intermediate'
+  },
+  {
+    id: 30,
+    question: "What is useReducer used for?",
+    options: ["Simple state", "Complex state logic", "Effects", "Context"],
+    correctAnswer: 1,
+    category: 'intermediate'
+  },
+  {
+    id: 31,
+    question: "Custom hooks must:",
+    options: ["Start with 'use'", "Be class methods", "Return JSX", "Be arrow functions"],
+    correctAnswer: 0,
+    category: 'intermediate'
+  },
+  {
+    id: 32,
+    question: "useContext is used for:",
+    options: ["Creating context", "Consuming context", "Both", "Neither"],
+    correctAnswer: 1,
+    category: 'intermediate'
+  },
+  {
+    id: 33,
+    question: "Rules of hooks require:",
+    options: ["Call in any order", "Call at top level only", "Call conditionally", "Call in loops"],
+    correctAnswer: 1,
+    category: 'intermediate'
+  },
+  {
+    id: 34,
+    question: "Functional state updates help with:",
+    options: ["Performance", "Batching issues", "Syntax", "Debugging"],
+    correctAnswer: 1,
+    category: 'intermediate'
+  },
+  {
+    id: 35,
+    question: "Multiple useState calls create:",
+    options: ["Single state", "Independent states", "Shared state", "No state"],
+    correctAnswer: 1,
+    category: 'intermediate'
+  },
+  {
+    id: 36,
+    question: "useLayoutEffect runs:",
+    options: ["Asynchronously", "Synchronously before paint", "After paint", "Never"],
+    correctAnswer: 1,
+    category: 'intermediate'
+  },
+  {
+    id: 37,
+    question: "To handle async in useEffect:",
+    options: ["Make callback async", "Declare async function inside", "Use await directly", "Use sync only"],
+    correctAnswer: 1,
+    category: 'intermediate'
+  },
+  {
+    id: 38,
+    question: "React batches state updates for:",
+    options: ["Performance", "Debugging", "Syntax", "No reason"],
+    correctAnswer: 0,
+    category: 'intermediate'
+  },
+  {
+    id: 39,
+    question: "Data flows from child to parent via:",
+    options: ["State", "Props", "Callback functions", "Context"],
+    correctAnswer: 2,
+    category: 'intermediate'
+  },
+  {
+    id: 40,
+    question: "useRef doesn't trigger re-renders when:",
+    options: ["Value changes", "Component mounts", "Props change", "Never triggers re-renders"],
+    correctAnswer: 3,
+    category: 'intermediate'
+  },
+
+  // EXPERT QUIZ (80+ questions)
+  {
+    id: 41,
+    question: "What is the primary benefit of React.memo?",
+    options: ["Faster initial rendering", "Prevents unnecessary re-renders", "Reduces bundle size", "Improves SEO"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 42,
+    question: "When should you use useCallback?",
+    options: ["Always for all functions", "For expensive calculations", "To prevent child re-renders", "For event handlers only"],
+    correctAnswer: 2,
+    category: 'expert'
+  },
+  {
+    id: 43,
+    question: "What is the purpose of React Context?",
+    options: ["Component styling", "State management", "Avoiding prop drilling", "Performance optimization"],
+    correctAnswer: 2,
+    category: 'expert'
+  },
+  {
+    id: 44,
+    question: "React portals are useful for:",
+    options: ["Code splitting", "Rendering outside component tree", "State management", "Performance optimization"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 45,
+    question: "useMemo is used for:",
+    options: ["Memoizing functions", "Memoizing values", "Creating context", "Handling effects"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 46,
+    question: "The difference between useCallback and useMemo:",
+    options: ["No difference", "useCallback for functions, useMemo for values", "useMemo for functions", "useCallback for values"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 47,
+    question: "useImperativeHandle is used for:",
+    options: ["Performance", "Customizing ref handle", "State management", "Event handling"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 48,
+    question: "React Suspense is used for:",
+    options: ["Error handling", "Loading states", "Performance", "State management"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 49,
+    question: "Code splitting in React helps with:",
+    options: ["Bundle size", "Performance", "Loading time", "All of the above"],
+    correctAnswer: 3,
+    category: 'expert'
+  },
+  {
+    id: 50,
+    question: "React.lazy() must be used with:",
+    options: ["useEffect", "Suspense", "useMemo", "useCallback"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 51,
+    question: "Higher-order components are:",
+    options: ["Functions that take components", "Components that return functions", "Built-in components", "Class components only"],
+    correctAnswer: 0,
+    category: 'expert'
+  },
+  {
+    id: 52,
+    question: "Render props pattern allows:",
+    options: ["Better performance", "Code reuse via function props", "Easier debugging", "Faster rendering"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 53,
+    question: "To prevent unnecessary re-renders:",
+    options: ["Use React.memo", "Use useCallback", "Use useMemo", "All of the above"],
+    correctAnswer: 3,
+    category: 'expert'
+  },
+  {
+    id: 54,
+    question: "React reconciliation uses:",
+    options: ["Breadth-first search", "Diffing algorithm", "Binary search", "Linear search"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 55,
+    question: "Memory leaks in React can be prevented by:",
+    options: ["Using more state", "Proper cleanup", "Avoiding hooks", "Using class components"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 56,
+    question: "React Profiler is used for:",
+    options: ["Debugging", "Performance measurement", "State inspection", "Error tracking"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 57,
+    question: "React Fiber enables:",
+    options: ["Faster rendering", "Concurrent features", "Better debugging", "Smaller bundle"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 58,
+    question: "Virtualization in React helps with:",
+    options: ["Large lists performance", "Bundle size", "Debugging", "Testing"],
+    correctAnswer: 0,
+    category: 'expert'
+  },
+  {
+    id: 59,
+    question: "Concurrent mode allows React to:",
+    options: ["Run faster", "Interrupt rendering work", "Use less memory", "Handle more components"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 60,
+    question: "React's automatic batching applies to:",
+    options: ["Only React events", "Promises and timeouts too", "Class components only", "Function components only"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 61,
+    question: "Race conditions in React can be handled by:",
+    options: ["Using more state", "Cleanup functions", "Avoiding async", "Using classes"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 62,
+    question: "The Activity component is used for:",
+    options: ["Error handling", "State preservation", "Performance", "Testing"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 63,
+    question: "React transitions help with:",
+    options: ["Animations", "Non-urgent updates", "State management", "Event handling"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 64,
+    question: "Server Components run on:",
+    options: ["Client only", "Server only", "Both client and server", "Neither"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 65,
+    question: "useDebugValue is used for:",
+    options: ["Performance", "Custom hook debugging", "Error handling", "State management"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 66,
+    question: "Error boundaries catch errors in:",
+    options: ["Event handlers", "Child component tree", "Async code", "Server requests"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 67,
+    question: "To optimize Context performance:",
+    options: ["Use single large context", "Split contexts", "Avoid context", "Use props instead"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 68,
+    question: "Testing React components should focus on:",
+    options: ["Implementation details", "User behavior", "Internal state", "Code coverage only"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 69,
+    question: "Controlled refs are:",
+    options: ["Managed by DOM", "Managed by React", "Not recommended", "Only for classes"],
+    correctAnswer: 1,
+    category: 'expert'
+  },
+  {
+    id: 70,
+    question: "React 19 automatic batching works with:",
+    options: ["Event handlers only", "All async operations", "Promises only", "Timeouts only"],
+    correctAnswer: 1,
+    category: 'expert'
+  }
+];
