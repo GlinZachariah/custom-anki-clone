@@ -40,3 +40,7 @@ The application follows a component-based React architecture:
 - Create React App setup
 - Jest for testing
 - ESLint with react-app configuration
+
+## Development Workflow
+
+**IMPORTANT**: After completing any code changes or new features, always commit the changes to git. This ensures proper version control and tracking of all modifications. Use descriptive commit messages that explain what was changed and why.
