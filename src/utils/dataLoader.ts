@@ -9,6 +9,8 @@ export const loadTopicData = async (topic: string) => {
       return await import('../topics/java/data');
     case 'spring':
       return await import('../topics/spring/data');
+    case 'api':
+      return await import('../topics/api/data');
     default:
       throw new Error(`Unsupported topic: ${topic}`);
   }
