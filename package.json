@@ -2,6 +2,7 @@
   "name": "react-anki-flashcards",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://glinzachiarah.github.io/custom-anki-clone",
   "dependencies": {
     "@types/node": "^18.15.0",
     "@types/react": "^18.0.28",
