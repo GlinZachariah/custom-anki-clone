@@ -11,7 +11,7 @@ interface Topic {
 const topics: Topic[] = [
   { id: 'react', name: 'React', enabled: true, description: 'Learn React fundamentals, hooks, and advanced patterns' },
   { id: 'java', name: 'Java', enabled: true, description: 'Master Java programming language and OOP concepts' },
-  { id: 'spring', name: 'Spring', enabled: false, description: 'Spring Framework and Spring Boot development' },
+  { id: 'spring', name: 'Spring', enabled: true, description: 'Spring Framework and Spring Boot development' },
   { id: 'api', name: 'API', enabled: false, description: 'REST APIs, GraphQL, and API design principles' },
   { id: 'sql', name: 'SQL', enabled: false, description: 'Database queries, joins, and optimization' },
   { id: 'kubernetes', name: 'Kubernetes', enabled: false, description: 'Container orchestration and K8s deployments' },
