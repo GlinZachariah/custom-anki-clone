@@ -1,17 +1,18 @@
 import React, { useState, useMemo } from 'react';
-import { Category } from '../types';
-import { flashcards, categoryData } from '../topics/react/data';
+import { Category, Flashcard as FlashcardType, CategoryData } from '../types';
 import Flashcard from './Flashcard';
 
 interface FlashcardViewProps {
   category: Category;
   onBack: () => void;
+  flashcards: FlashcardType[];
+  categoryData: Record<Category, CategoryData>;
 }
 
-const FlashcardView: React.FC<FlashcardViewProps> = ({ category, onBack }) => {
+const FlashcardView: React.FC<FlashcardViewProps> = ({ category, onBack, flashcards, categoryData }) => {
   const categoryFlashcards = useMemo(
     () => flashcards.filter(card => card.category === category),
-    [category]
+    [flashcards, category]
   );
 
   const [currentCardIndex, setCurrentCardIndex] = useState(0);

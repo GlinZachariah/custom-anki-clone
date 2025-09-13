@@ -1,17 +1,18 @@
 import React from 'react';
-import { Category } from '../types';
-import { categoryData } from '../topics/react/data';
+import { Category, CategoryData } from '../types';
 
 interface CategorySelectorProps {
   onCategorySelect: (category: Category) => void;
   onViewChange: (view: 'flashcards' | 'quiz') => void;
   selectedCategory: Category;
+  categoryData: Record<Category, CategoryData>;
 }
 
 const CategorySelector: React.FC<CategorySelectorProps> = ({
   onCategorySelect,
   onViewChange,
-  selectedCategory
+  selectedCategory,
+  categoryData
 }) => {
   const categories: Category[] = ['basics', 'intermediate', 'expert'];
 

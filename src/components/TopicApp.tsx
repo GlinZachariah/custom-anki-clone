@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTopicContext } from '../contexts/TopicContext';
-import { Category } from '../types';
+import { Category, CategoryData, Flashcard, QuizQuestion } from '../types';
+import { getTopicData } from '../utils/dataLoader';
 import CategorySelector from './CategorySelector';
 import FlashcardView from './FlashcardView';
 import QuizView from './QuizView';
@@ -13,6 +14,12 @@ const TopicApp: React.FC = () => {
 
   const [currentView, setCurrentView] = useState<'categories' | 'flashcards' | 'quiz'>('categories');
   const [selectedCategory, setSelectedCategory] = useState<Category>('basics');
+  const [topicData, setTopicData] = useState<{
+    categoryData: Record<Category, CategoryData>;
+    flashcards: Flashcard[];
+    quizQuestions: QuizQuestion[];
+  } | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (topicName) {
@@ -20,12 +27,32 @@ const TopicApp: React.FC = () => {
     }
   }, [topicName, setCurrentTopic]);
 
-  // Only support React for now
+  // Support React and Java topics
   useEffect(() => {
-    if (topicName && topicName !== 'react') {
+    if (topicName && !['react', 'java'].includes(topicName)) {
       navigate('/learn');
       return;
     }
+  }, [topicName, navigate]);
+
+  // Load topic data
+  useEffect(() => {
+    const loadData = async () => {
+      if (!topicName) return;
+
+      try {
+        setLoading(true);
+        const data = await getTopicData(topicName);
+        setTopicData(data);
+      } catch (error) {
+        console.error('Failed to load topic data:', error);
+        navigate('/learn');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadData();
   }, [topicName, navigate]);
 
   const handleBackToCategories = () => {
@@ -78,26 +105,44 @@ const TopicApp: React.FC = () => {
       </header>
 
       <main className="app-main">
-        {currentView === 'categories' && (
-          <CategorySelector
-            onCategorySelect={handleCategorySelect}
-            onViewChange={handleViewChange}
-            selectedCategory={selectedCategory}
-          />
-        )}
+        {loading ? (
+          <div className="loading-container">
+            <h2>Loading {getTopicDisplayName(topicName)} content...</h2>
+          </div>
+        ) : topicData ? (
+          <>
+            {currentView === 'categories' && (
+              <CategorySelector
+                onCategorySelect={handleCategorySelect}
+                onViewChange={handleViewChange}
+                selectedCategory={selectedCategory}
+                categoryData={topicData.categoryData}
+              />
+            )}
 
-        {currentView === 'flashcards' && (
-          <FlashcardView
-            category={selectedCategory}
-            onBack={handleBackToCategories}
-          />
-        )}
+            {currentView === 'flashcards' && (
+              <FlashcardView
+                category={selectedCategory}
+                onBack={handleBackToCategories}
+                flashcards={topicData.flashcards}
+                categoryData={topicData.categoryData}
+              />
+            )}
 
-        {currentView === 'quiz' && (
-          <QuizView
-            category={selectedCategory}
-            onBack={handleBackToCategories}
-          />
+            {currentView === 'quiz' && (
+              <QuizView
+                category={selectedCategory}
+                onBack={handleBackToCategories}
+                quizQuestions={topicData.quizQuestions}
+                categoryData={topicData.categoryData}
+              />
+            )}
+          </>
+        ) : (
+          <div className="error-container">
+            <h2>Failed to load topic data</h2>
+            <button onClick={handleExitToLearn}>Back to Topics</button>
+          </div>
         )}
       </main>
     </div>

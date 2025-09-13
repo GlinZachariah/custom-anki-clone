@@ -1,17 +1,18 @@
 import React, { useState, useMemo } from 'react';
-import { Category } from '../types';
-import { quizQuestions, categoryData } from '../topics/react/data';
+import { Category, QuizQuestion, CategoryData } from '../types';
 import Quiz from './Quiz';
 
 interface QuizViewProps {
   category: Category;
   onBack: () => void;
+  quizQuestions: QuizQuestion[];
+  categoryData: Record<Category, CategoryData>;
 }
 
-const QuizView: React.FC<QuizViewProps> = ({ category, onBack }) => {
+const QuizView: React.FC<QuizViewProps> = ({ category, onBack, quizQuestions, categoryData }) => {
   const categoryQuestions = useMemo(
     () => quizQuestions.filter(question => question.category === category),
-    [category]
+    [quizQuestions, category]
   );
 
   const [quizStarted, setQuizStarted] = useState(false);
