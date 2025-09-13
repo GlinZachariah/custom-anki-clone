@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Category } from '../types';
-import { flashcards, categoryData } from '../data';
+import { flashcards, categoryData } from '../topics/react/data';
 import Flashcard from './Flashcard';
 
 interface FlashcardViewProps {

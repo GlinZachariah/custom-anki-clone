@@ -1,6 +1,6 @@
 import React from 'react';
 import { Category } from '../types';
-import { categoryData } from '../data';
+import { categoryData } from '../topics/react/data';
 
 interface CategorySelectorProps {
   onCategorySelect: (category: Category) => void;

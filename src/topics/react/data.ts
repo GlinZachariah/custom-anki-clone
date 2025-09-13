@@ -1,25 +1,25 @@
-import { Flashcard, QuizQuestion, Category, CategoryData } from './types';
+import { Flashcard, QuizQuestion, Category, CategoryData } from '../../types';
 
 export const categoryData: Record<Category, CategoryData> = {
   basics: {
-    name: 'Basics',
+    name: 'React Basics',
     color: '#4CAF50',
-    description: 'Fundamental React concepts'
+    description: 'Fundamental React concepts and JSX'
   },
   intermediate: {
-    name: 'Intermediate',
+    name: 'React Intermediate',
     color: '#FF9800',
-    description: 'State management and hooks'
+    description: 'React hooks, state management, and component patterns'
   },
   expert: {
-    name: 'Expert',
+    name: 'React Expert',
     color: '#F44336',
-    description: 'Advanced patterns and optimization'
+    description: 'Advanced React patterns, performance optimization, and concurrent features'
   }
 };
 
 export const flashcards: Flashcard[] = [
-  // BASICS - Core Concepts (40+ cards)
+  // BASICS - Core React Concepts (40+ cards)
   {
     id: 1,
     question: "What is JSX in React?",
@@ -171,7 +171,7 @@ export const flashcards: Flashcard[] = [
     category: 'basics'
   },
 
-  // INTERMEDIATE - State & Hooks (50+ cards)
+  // INTERMEDIATE - React Hooks & State Management (50+ cards)
   {
     id: 26,
     question: "What is the useState hook and how do you use it?",
@@ -289,7 +289,7 @@ export const flashcards: Flashcard[] = [
   {
     id: 45,
     question: "How do you conditionally apply classes in React?",
-    answer: "You can conditionally apply classes using template literals, ternary operators, or className libraries: className={`base ${isActive ? 'active' : ''}`} or using libraries like classnames.",
+    answer: "You can conditionally apply classes using template literals, ternary operators, or className libraries: className={'base ' + (isActive ? 'active' : '')} or using libraries like classnames.",
     category: 'intermediate'
   },
   {
@@ -323,7 +323,7 @@ export const flashcards: Flashcard[] = [
     category: 'intermediate'
   },
 
-  // EXPERT - Performance & Advanced Patterns (50+ cards)  
+  // EXPERT - Advanced React Patterns & Performance (50+ cards)
   {
     id: 51,
     question: "What is React.memo and when should you use it?",
@@ -507,7 +507,7 @@ export const flashcards: Flashcard[] = [
 ];
 
 export const quizQuestions: QuizQuestion[] = [
-  // BASICS QUIZ (60+ questions)
+  // REACT BASICS QUIZ (60+ questions)
   {
     id: 1,
     question: "What does JSX stand for?",
@@ -649,7 +649,7 @@ export const quizQuestions: QuizQuestion[] = [
     category: 'basics'
   },
 
-  // INTERMEDIATE QUIZ (70+ questions)
+  // REACT INTERMEDIATE QUIZ (70+ questions)
   {
     id: 21,
     question: "What does useState return?",
@@ -791,7 +791,7 @@ export const quizQuestions: QuizQuestion[] = [
     category: 'intermediate'
   },
 
-  // EXPERT QUIZ (80+ questions)
+  // REACT EXPERT QUIZ (80+ questions)
   {
     id: 41,
     question: "What is the primary benefit of React.memo?",

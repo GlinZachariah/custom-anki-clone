@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Category } from '../types';
-import { quizQuestions, categoryData } from '../data';
+import { quizQuestions, categoryData } from '../topics/react/data';
 import Quiz from './Quiz';
 
 interface QuizViewProps {
