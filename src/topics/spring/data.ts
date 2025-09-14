@@ -4,17 +4,17 @@ export const categoryData: Record<Category, CategoryData> = {
   basics: {
     name: 'Spring Basics',
     description: 'Core Spring concepts, IoC container, and dependency injection fundamentals',
-    color: '#6DB33F'
+    color: '#4CAF50'
   },
   intermediate: {
     name: 'Spring Intermediate',
     description: 'Spring MVC, data access, transactions, and AOP concepts',
-    color: '#5A9E36'
+    color: '#FF9800'
   },
   expert: {
     name: 'Spring Expert',
     description: 'Advanced Spring features, security, microservices, and best practices',
-    color: '#4A7C2A'
+    color: '#F44336'
   }
 };
 

@@ -4,17 +4,17 @@ export const categoryData: Record<Category, CategoryData> = {
   basics: {
     name: 'Kubernetes Basics',
     description: 'Pods, Services, basic concepts, and fundamental container orchestration',
-    color: '#326CE5'
+    color: '#4CAF50'
   },
   intermediate: {
     name: 'Kubernetes Intermediate',
     description: 'Deployments, ReplicaSets, ConfigMaps, Secrets, and workload management',
-    color: '#2557C5'
+    color: '#FF9800'
   },
   expert: {
     name: 'Kubernetes Expert',
     description: 'Advanced networking, security, operators, and production best practices',
-    color: '#1E48A5'
+    color: '#F44336'
   }
 };
 

@@ -4,17 +4,17 @@ export const categoryData: Record<Category, CategoryData> = {
   basics: {
     name: 'API Basics',
     description: 'REST fundamentals, HTTP methods, status codes, and API design principles',
-    color: '#FF6B6B'
+    color: '#4CAF50'
   },
   intermediate: {
     name: 'API Intermediate',
     description: 'Authentication, documentation, versioning, and error handling',
-    color: '#E55555'
+    color: '#FF9800'
   },
   expert: {
     name: 'API Expert',
     description: 'Advanced patterns, security, performance, and best practices',
-    color: '#CC4444'
+    color: '#F44336'
   }
 };
 

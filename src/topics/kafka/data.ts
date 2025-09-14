@@ -4,17 +4,17 @@ export const categoryData: Record<Category, CategoryData> = {
   basics: {
     name: 'Kafka Basics',
     description: 'Topics, partitions, producers, consumers, and fundamental messaging concepts',
-    color: '#FF6B35'
+    color: '#4CAF50'
   },
   intermediate: {
     name: 'Kafka Intermediate',
     description: 'Kafka Streams, consumer groups, replication, configuration, and cluster management',
-    color: '#E55722'
+    color: '#FF9800'
   },
   expert: {
     name: 'Kafka Expert',
     description: 'Advanced architectures, performance tuning, exactly-once semantics, and production patterns',
-    color: '#CC4A0F'
+    color: '#F44336'
   }
 };
 

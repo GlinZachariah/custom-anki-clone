@@ -9,12 +9,12 @@ export const categoryData: Record<Category, CategoryData> = {
   intermediate: {
     name: 'SQL Intermediate',
     description: 'JOINs, subqueries, functions, indexes, and advanced querying techniques',
-    color: '#388E3C'
+    color: '#FF9800'
   },
   expert: {
     name: 'SQL Expert',
     description: 'Advanced queries, optimization, stored procedures, and database design patterns',
-    color: '#2E7D32'
+    color: '#F44336'
   }
 };
 
