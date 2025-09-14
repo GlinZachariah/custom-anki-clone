@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { QuizQuestion } from '../types';
 import { randomizeQuizQuestions, RandomizedQuizQuestion } from '../utils/quizRandomizer';
 import QuizSummaryModal from './QuizSummaryModal';
@@ -134,6 +134,28 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack }) => {
     setShowPerfectAnimation(false);
   };
 
+  // Keyboard event handler for navigation
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      // Only handle keyboard events when quiz is active (not completed)
+      if (quizCompleted) return;
+
+      if (event.code === 'Space') {
+        event.preventDefault();
+        // Only proceed if an answer is selected (button is enabled)
+        if (selectedAnswer !== null) {
+          handleNext();
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [selectedAnswer, quizCompleted]);
+
   if (quizCompleted) {
     const isPerfectScore = getScorePercentage() === 100;
     
@@ -208,13 +230,17 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack }) => {
             </div>
           )}
         </div>
-      </div><QuizSummaryModal
-          isOpen={showSummaryModal}
-          score={calculateScore()}
-          totalQuestions={randomizedQuestions.length}
-          onRetry={handleModalRetry}
-          onExit={handleModalExit}
-          onClose={handleModalClose} /></>
+      </div>
+
+      <QuizSummaryModal
+        isOpen={showSummaryModal}
+        score={calculateScore()}
+        totalQuestions={randomizedQuestions.length}
+        onRetry={handleModalRetry}
+        onExit={handleModalExit}
+        onClose={handleModalClose}
+      />
+      </>
     );
   }
 
@@ -236,6 +262,9 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack }) => {
               Current Score: {getCurrentScore()}/{answers.length} ({getCurrentScorePercentage()}%)
             </span>
           )}
+          <div className="keyboard-hints">
+            <small>⌨️ Space: Next Question (when answer selected)</small>
+          </div>
         </div>
       </div>
 
@@ -287,10 +316,11 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack }) => {
         <button className="secondary-button" onClick={onBack}>
           ← Back to Categories
         </button>
-        <button 
+        <button
           className="primary-button"
           onClick={handleNext}
           disabled={selectedAnswer === null}
+          title={selectedAnswer === null ? 'Select an answer first' : 'Next question (Space)'}
         >
           {isLastQuestion ? 'Finish Quiz' : 'Next Question'}
         </button>

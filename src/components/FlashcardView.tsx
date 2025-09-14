@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Category, Flashcard as FlashcardType, CategoryData } from '../types';
 import Flashcard from './Flashcard';
 
@@ -37,6 +37,28 @@ const FlashcardView: React.FC<FlashcardViewProps> = ({ category, onBack, flashca
     setCardFlipped(false); // Reset card to show question
   };
 
+  // Keyboard event handler for navigation
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.code === 'Space') {
+        event.preventDefault();
+        if (event.shiftKey) {
+          // Shift + Space = Previous card
+          handlePrevious();
+        } else {
+          // Space = Next card
+          handleNext();
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [currentCardIndex, categoryFlashcards.length]);
+
   if (categoryFlashcards.length === 0) {
     return (
       <div className="flashcard-view">
@@ -61,6 +83,9 @@ const FlashcardView: React.FC<FlashcardViewProps> = ({ category, onBack, flashca
         <div className="progress-info">
           Card {currentCardIndex + 1} of {categoryFlashcards.length}
         </div>
+        <div className="keyboard-hints">
+          <small>⌨️ Space: Next • Shift+Space: Previous</small>
+        </div>
       </div>
 
       <div className="flashcard-container">
@@ -72,10 +97,11 @@ const FlashcardView: React.FC<FlashcardViewProps> = ({ category, onBack, flashca
       </div>
 
       <div className="navigation-controls">
-        <button 
+        <button
           className="nav-button"
           onClick={handlePrevious}
           disabled={currentCardIndex === 0}
+          title="Previous card (Shift + Space)"
         >
           ← Previous
         </button>
@@ -111,10 +137,11 @@ const FlashcardView: React.FC<FlashcardViewProps> = ({ category, onBack, flashca
           })()}
         </div>
         
-        <button 
+        <button
           className="nav-button"
           onClick={handleNext}
           disabled={currentCardIndex === categoryFlashcards.length - 1}
+          title="Next card (Space)"
         >
           Next →
         </button>

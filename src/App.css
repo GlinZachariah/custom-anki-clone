@@ -1662,3 +1662,15 @@ body {
     font-size: 1.5rem;
   }
 }
+
+/* Keyboard Hints Styles */
+.keyboard-hints {
+  margin-top: 0.5rem;
+  opacity: 0.7;
+}
+
+.keyboard-hints small {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
