@@ -7,6 +7,8 @@ export const loadTopicData = async (topic: string) => {
       return await import('../topics/react/data');
     case 'java':
       return await import('../topics/java/data');
+    case 'java8':
+      return await import('../topics/java8/data');
     case 'spring':
       return await import('../topics/spring/data');
     case 'api':

@@ -29,7 +29,7 @@ const TopicApp: React.FC = () => {
 
   // Support React, Java, Spring, and API topics
   useEffect(() => {
-    if (topicName && !['react', 'java', 'spring', 'api', 'sql', 'kubernetes', 'kafka'].includes(topicName)) {
+    if (topicName && !['react', 'java', 'java8', 'spring', 'api', 'sql', 'kubernetes', 'kafka'].includes(topicName)) {
       navigate('/learn');
       return;
     }
@@ -75,6 +75,7 @@ const TopicApp: React.FC = () => {
     const topicNames: { [key: string]: string } = {
       react: 'React',
       java: 'Java',
+      java8: 'Java 8',
       spring: 'Spring',
       api: 'API',
       sql: 'SQL',
