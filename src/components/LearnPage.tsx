@@ -15,7 +15,7 @@ const topics: Topic[] = [
   { id: 'api', name: 'API', enabled: true, description: 'REST APIs and API design principles' },
   { id: 'sql', name: 'SQL', enabled: true, description: 'Database queries, joins, and optimization' },
   { id: 'kubernetes', name: 'Kubernetes', enabled: true, description: 'Container orchestration and K8s deployments' },
-  { id: 'kafka', name: 'Kafka', enabled: false, description: 'Event streaming and message queues' },
+  { id: 'kafka', name: 'Kafka', enabled: true, description: 'Event streaming and message queues' },
 ];
 
 const LearnPage: React.FC = () => {
