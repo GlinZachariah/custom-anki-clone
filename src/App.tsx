@@ -8,12 +8,11 @@ import './App.css';
 const App: React.FC = () => {
   return (
     <TopicProvider>
-      <Router>
+      <Router basename="/custom-anki-clone">
         <Routes>
-          <Route path="/learn" element={<LearnPage />} />
+          <Route path="/" element={<LearnPage />} />
           <Route path="/topics/:topicName" element={<TopicApp />} />
-          <Route path="/" element={<Navigate to="/learn" replace />} />
-          <Route path="*" element={<Navigate to="/learn" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>
     </TopicProvider>
