@@ -13,6 +13,8 @@ export const loadTopicData = async (topic: string) => {
       return await import('../topics/api/data');
     case 'sql':
       return await import('../topics/sql/data');
+    case 'kubernetes':
+      return await import('../topics/kubernetes/data');
     default:
       throw new Error(`Unsupported topic: ${topic}`);
   }
