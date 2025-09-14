@@ -17,7 +17,12 @@ const QuizSummaryModal: React.FC<QuizSummaryModalProps> = ({
   onExit,
   onClose
 }) => {
-  if (!isOpen) return null;
+  console.log('📱 QuizSummaryModal render', { isOpen, score, totalQuestions });
+  if (!isOpen) {
+    console.log('❌ Modal not open, returning null');
+    return null;
+  }
+  console.log('✅ Modal is open, rendering...');
 
   const percentage = Math.round((score / totalQuestions) * 100);
 

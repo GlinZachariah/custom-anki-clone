@@ -7,9 +7,10 @@ interface QuizViewProps {
   onBack: () => void;
   quizQuestions: QuizQuestion[];
   categoryData: Record<Category, CategoryData>;
+  onViewChange?: (view: 'flashcards' | 'quiz') => void;
 }
 
-const QuizView: React.FC<QuizViewProps> = ({ category, onBack, quizQuestions, categoryData }) => {
+const QuizView: React.FC<QuizViewProps> = ({ category, onBack, quizQuestions, categoryData, onViewChange }) => {
   const categoryQuestions = useMemo(
     () => quizQuestions.filter(question => question.category === category),
     [quizQuestions, category]
@@ -87,10 +88,11 @@ const QuizView: React.FC<QuizViewProps> = ({ category, onBack, quizQuestions, ca
         <h2>{categoryData[category].name} - Quiz</h2>
       </div>
       
-      <Quiz 
+      <Quiz
         questions={categoryQuestions}
         onComplete={handleQuizComplete}
         onBack={onBack}
+        onViewChange={onViewChange}
       />
     </div>
   );

@@ -137,6 +137,7 @@ const TopicApp: React.FC = () => {
                 onBack={handleBackToCategories}
                 quizQuestions={topicData.quizQuestions}
                 categoryData={topicData.categoryData}
+                onViewChange={handleViewChange}
               />
             )}
           </>
