@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { QuizQuestion } from '../types';
+import { randomizeQuizQuestions, RandomizedQuizQuestion } from '../utils/quizRandomizer';
+import QuizSummaryModal from './QuizSummaryModal';
 
 interface QuizProps {
   questions: QuizQuestion[];
@@ -8,6 +10,9 @@ interface QuizProps {
 }
 
 const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack }) => {
+  // Randomize questions once when component mounts
+  const randomizedQuestions = useMemo(() => randomizeQuizQuestions(questions), [questions]);
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [answers, setAnswers] = useState<number[]>([]);
@@ -17,9 +22,10 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack }) => {
   const [feedbackMessage, setFeedbackMessage] = useState<string>('');
   const [isCorrect, setIsCorrect] = useState(false);
   const [showPerfectAnimation, setShowPerfectAnimation] = useState(false);
+  const [showSummaryModal, setShowSummaryModal] = useState(false);
 
-  const currentQuestion = questions[currentQuestionIndex];
-  const isLastQuestion = currentQuestionIndex === questions.length - 1;
+  const currentQuestion = randomizedQuestions[currentQuestionIndex];
+  const isLastQuestion = currentQuestionIndex === randomizedQuestions.length - 1;
 
   const handleAnswerSelect = (answerIndex: number) => {
     setSelectedAnswer(answerIndex);
@@ -44,19 +50,20 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack }) => {
 
     if (isLastQuestion) {
       const score = newAnswers.reduce((acc, answer, index) => {
-        return acc + (answer === questions[index].correctAnswer ? 1 : 0);
+        return acc + (answer === randomizedQuestions[index].correctAnswer ? 1 : 0);
       }, 0);
-      
+
       setQuizCompleted(true);
+      setShowSummaryModal(true);
       // Show perfect score animation if they got 100%
-      if (score === questions.length) {
+      if (score === randomizedQuestions.length) {
         setShowPerfectAnimation(true);
         // Auto-hide animation after 3 seconds
         setTimeout(() => {
           setShowPerfectAnimation(false);
         }, 3000);
       }
-      onComplete(score, questions.length);
+      onComplete(score, randomizedQuestions.length);
     } else {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedAnswer(null);
@@ -71,7 +78,7 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack }) => {
 
   const calculateScore = () => {
     return answers.reduce((acc, answer, index) => {
-      return acc + (answer === questions[index].correctAnswer ? 1 : 0);
+      return acc + (answer === randomizedQuestions[index].correctAnswer ? 1 : 0);
     }, 0);
   };
 
@@ -85,7 +92,7 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack }) => {
   };
 
   const getScorePercentage = () => {
-    return Math.round((calculateScore() / questions.length) * 100);
+    return Math.round((calculateScore() / randomizedQuestions.length) * 100);
   };
 
   const getScoreMessage = () => {
@@ -107,6 +114,20 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack }) => {
     setFeedbackMessage('');
     setIsCorrect(false);
     setShowPerfectAnimation(false);
+    setShowSummaryModal(false);
+  };
+
+  const handleModalRetry = () => {
+    handleResetQuiz();
+  };
+
+  const handleModalExit = () => {
+    setShowSummaryModal(false);
+    onBack();
+  };
+
+  const handleModalClose = () => {
+    setShowSummaryModal(false);
   };
 
   const handleDismissAnimation = () => {
@@ -117,7 +138,7 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack }) => {
     const isPerfectScore = getScorePercentage() === 100;
     
     return (
-      <div className="quiz-completed">
+      <><div className="quiz-completed">
         {isPerfectScore && showPerfectAnimation && (
           <div className="perfect-score-animation" onClick={handleDismissAnimation}>
             <div className="stars-container">
@@ -130,7 +151,7 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack }) => {
             <div className="dismiss-hint">Click anywhere to continue</div>
           </div>
         )}
-        
+
         <div className="quiz-results">
           <h2>Quiz Results</h2>
           <div className="score-display">
@@ -139,7 +160,7 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack }) => {
             </div>
             <p className="score-message">{getScoreMessage()}</p>
             <p className="score-details">
-              You answered {calculateScore()} out of {questions.length} questions correctly
+              You answered {calculateScore()} out of {randomizedQuestions.length} questions correctly
             </p>
           </div>
 
@@ -158,10 +179,10 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack }) => {
           {showResult && (
             <div className="detailed-results">
               <h3>Detailed Results</h3>
-              {questions.map((question, index) => {
+              {randomizedQuestions.map((question, index) => {
                 const userAnswer = answers[index];
                 const isCorrect = userAnswer === question.correctAnswer;
-                
+
                 return (
                   <div key={question.id} className={`result-item ${isCorrect ? 'correct' : 'incorrect'}`}>
                     <div className="result-header">
@@ -187,7 +208,13 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack }) => {
             </div>
           )}
         </div>
-      </div>
+      </div><QuizSummaryModal
+          isOpen={showSummaryModal}
+          score={calculateScore()}
+          totalQuestions={randomizedQuestions.length}
+          onRetry={handleModalRetry}
+          onExit={handleModalExit}
+          onClose={handleModalClose} /></>
     );
   }
 
@@ -195,14 +222,14 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack }) => {
     <div className="quiz-container">
       <div className="quiz-progress">
         <div className="progress-bar">
-          <div 
-            className="progress-fill" 
-            style={{ width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }}
+          <div
+            className="progress-fill"
+            style={{ width: `${((currentQuestionIndex + 1) / randomizedQuestions.length) * 100}%` }}
           />
         </div>
         <div className="progress-info">
           <span className="progress-text">
-            Question {currentQuestionIndex + 1} of {questions.length}
+            Question {currentQuestionIndex + 1} of {randomizedQuestions.length}
           </span>
           {answers.length > 0 && (
             <span className="current-score">
