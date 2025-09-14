@@ -8,9 +8,11 @@ interface QuizProps {
   onComplete: (score: number, totalQuestions: number) => void;
   onBack: () => void;
   onViewChange?: (view: 'flashcards' | 'quiz') => void;
+  categoryName?: string;
+  categoryDescription?: string;
 }
 
-const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack, onViewChange }) => {
+const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack, onViewChange, categoryName, categoryDescription }) => {
   // Randomize questions once when component mounts
   const randomizedQuestions = useMemo(() => randomizeQuizQuestions(questions), [questions]);
 
@@ -237,18 +239,45 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack, onViewChange
     return (
       <div className="startup-popup-overlay">
         <div className="startup-popup">
-          <h2>🎯 Ready to Start Quiz?</h2>
+          <h2>🎯 {categoryName ? `${categoryName} Quiz` : 'Quiz'}</h2>
           <div className="popup-content">
-            <p>You're about to begin the quiz with <strong>{randomizedQuestions.length}</strong> questions.</p>
+            {categoryDescription && (
+              <p className="quiz-description">
+                Test your knowledge of {categoryDescription.toLowerCase()} with this interactive timed quiz.
+              </p>
+            )}
+
+            <div className="quiz-stats-section">
+              <h3>📊 Quiz Information</h3>
+              <div className="quiz-stats">
+                <div className="stat">
+                  <span className="stat-number">{randomizedQuestions.length}</span>
+                  <span className="stat-label">Questions</span>
+                </div>
+                <div className="stat">
+                  <span className="stat-number">4</span>
+                  <span className="stat-label">Options each</span>
+                </div>
+                <div className="stat">
+                  <span className="stat-number">10s</span>
+                  <span className="stat-label">Per question</span>
+                </div>
+                <div className="stat">
+                  <span className="stat-number">1</span>
+                  <span className="stat-label">Correct answer</span>
+                </div>
+              </div>
+            </div>
 
             <div className="popup-features">
-              <h3>⏰ Timer Challenge</h3>
+              <h3>⏰ Timer Challenge Rules</h3>
               <ul>
-                <li>⏱️ Each question has a 10-second timer</li>
+                <li>⏱️ Each question has a 10-second countdown timer</li>
                 <li>🚀 Answer quickly or the question will be marked incorrect</li>
-                <li>✨ Immediate feedback after each answer</li>
-                <li>📊 Progress tracking throughout</li>
-                <li>⌨️ Keyboard shortcuts available (Space = Next)</li>
+                <li>✨ Get immediate feedback after each answer</li>
+                <li>📊 Track your progress and score throughout</li>
+                <li>⌨️ Use Space key to advance to next question</li>
+                <li>🎉 Special animations for perfect scores</li>
               </ul>
             </div>
 
@@ -451,9 +480,6 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete, onBack, onViewChange
               Current Score: {getCurrentScore()}/{answers.length} ({getCurrentScorePercentage()}%)
             </span>
           )}
-          <div className="keyboard-hints">
-            <small>⌨️ Space: Next Question (when answer selected) | ⏰ {timeLeft}s remaining</small>
-          </div>
         </div>
       </div>
 

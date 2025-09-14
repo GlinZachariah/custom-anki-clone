@@ -1747,6 +1747,63 @@ body {
   font-weight: 600;
 }
 
+/* Quiz Stats Section in Popup */
+.quiz-stats-section {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.quiz-stats-section h3 {
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.quiz-stats-section .quiz-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.quiz-stats-section .stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.quiz-stats-section .stat-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.quiz-stats-section .stat-label {
+  font-size: 0.85rem;
+  color: #4a5568;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.popup-content .quiz-description {
+  font-size: 1.1rem;
+  color: #2d3748;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
 .visibility-check {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 12px;
